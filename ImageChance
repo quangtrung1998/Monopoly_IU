@@ -6,13 +6,13 @@ import javax.swing.JPanel;
 public class ImageChance extends JPanel{
 	private static int changeimage;
 	public ImageChance() {
-		repaint();
+		repaint(); 
 	}
 	void change(int changeimage) {	
 		this.changeimage=changeimage;
 	}
 	public void paint(Graphics g)
-    {
-		g.drawImage(new ImageIcon(changeimage+".jpg").getImage(),0, 0,340,340,null);
-    }
+    	{
+		g.drawImage(new ImageIcon(changeimage+".jpg").getImage(),0, 0,340,339,null);
+   	 }
 }
