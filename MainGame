@@ -36,12 +36,12 @@ public class MainGame extends JFrame {
 	static BuyHouse byhouse;
 	private static Surface s;
 	private static JButton button ;
-	private static  int sum=0;
-	private static  int sum1=0,prision1=0,prision2=0,sum2=0;
-	public static 	int inialmoney1=1000,inialmoney2=1000;
+	protected static  int sum;
+	protected static  int sum1,prision1,prision2,sum2;
+	public static int inialmoney1=1000,inialmoney2=1000;
 	public static DefaultComboBoxModel mode;
 	public static JComboBox comboBox ;
-	public static int player1 = 1;
+	protected static int player1 ;
 	private static Camera camera;
 	private static CameraComputer cameracomputer;
 	private static CameraShow camerashow;
@@ -197,6 +197,7 @@ public class MainGame extends JFrame {
 		imagecommunitychest = new ImageCommunityChest();
 		communitychest.add(imagecommunitychest);
 		communitychest.Show();
+
 		while(inialmoney1>=0&&inialmoney2>=0)
 		{	
 			if(player1==1&&prision1==0)
@@ -234,7 +235,7 @@ public class MainGame extends JFrame {
 					game.move();	
 					camera.change(sum1);
 					game.repaint();
-					Thread.sleep(500);
+					Thread.sleep(10);
 					sum--;
 					if(sum1>=40)
 					{
@@ -298,7 +299,7 @@ public class MainGame extends JFrame {
 					game.move1();	
 					cameracomputer.change(sum2);
 					game.repaint();
-					Thread.sleep(500);
+					Thread.sleep(10);
 					sum--;
 					if(sum2>=40)
 					{
@@ -371,10 +372,24 @@ public class MainGame extends JFrame {
 		if(inialmoney1<=0)
 		{
 			JOptionPane.showMessageDialog(game,"You Lose" );
+			camera.change(0);
+			cameracomputer.change(0);
+			game.dispose();
+			camera.dispose();
+			cameracomputer.dispose();
+			chance.dispose();
+			communitychest.dispose();
 		}
 		else
 		{
 			JOptionPane.showMessageDialog(game,"You Win" );
+			camera.change(0);
+			cameracomputer.change(0);
+			game.dispose();
+			camera.dispose();
+			cameracomputer.dispose();
+			chance.dispose();
+			communitychest.dispose();
 		}
 		
 	}
