@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 
 public class CameraShowComputer extends JPanel{
 	private static int changeimage;
+	private static BuyHouse buyhouse;
 	public CameraShowComputer() {
 		repaint();
 	}
@@ -14,6 +15,36 @@ public class CameraShowComputer extends JPanel{
 	}
 	public void paint(Graphics g)
     {
-		g.drawImage(new ImageIcon(changeimage+".jpg").getImage(),0, 0,340,340,null);
+		g.drawImage(new ImageIcon(changeimage+".jpg").getImage(),0, 0,340,310,null);
+		if(buyhouse.buy[1][changeimage]==1) {
+			g.drawImage(new ImageIcon("house.png").getImage(),120, 120,60,60,null);
+		}
+		else if(buyhouse.buy[1][changeimage]==2) {
+			g.drawImage(new ImageIcon("house.png").getImage(),90, 120,60,60,null);
+			g.drawImage(new ImageIcon("house.png").getImage(),150, 120,60,60,null);
+		}
+		else if(buyhouse.buy[1][changeimage]==3) {
+			g.drawImage(new ImageIcon("house.png").getImage(),90, 120,60,60,null);
+			g.drawImage(new ImageIcon("house.png").getImage(),150, 120,60,60,null);
+			g.drawImage(new ImageIcon("house.png").getImage(),210, 120,60,60,null);
+		}
+		else if(buyhouse.buy[1][changeimage]==4) {
+			g.drawImage(new ImageIcon("hotel.png").getImage(),120, 120,60,60,null);
+		}
+		else if(buyhouse.buy[2][changeimage]==1) {
+			g.drawImage(new ImageIcon("housecomputer.png").getImage(),120, 120,60,60,null);
+		}
+		else if(buyhouse.buy[2][changeimage]==2) {
+			g.drawImage(new ImageIcon("housecomputer.png").getImage(),90, 120,60,60,null);
+			g.drawImage(new ImageIcon("housecomputer.png").getImage(),150, 120,60,60,null);
+		}
+		else if(buyhouse.buy[2][changeimage]==3) {
+			g.drawImage(new ImageIcon("housecomputer.png").getImage(),90, 120,60,60,null);
+			g.drawImage(new ImageIcon("housecomputer.png").getImage(),150, 120,60,60,null);
+			g.drawImage(new ImageIcon("housecomputer.png").getImage(),210, 120,60,60,null);
+		}
+		else if(buyhouse.buy[2][changeimage]==4) {
+			g.drawImage(new ImageIcon("hotelcomputer.png").getImage(),120, 120,60,60,null);
+		}
     }
 }
