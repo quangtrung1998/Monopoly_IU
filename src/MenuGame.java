@@ -25,5 +25,4 @@ public class MenuGame  extends JFrame {
 			backgroundmenugame = new BackgroundMenugame();
 			add(backgroundmenugame);
 			setVisible(true);
-		}
 }
