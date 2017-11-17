@@ -17,6 +17,12 @@ public class MenuGame  extends JFrame {
 			setLocationRelativeTo(null);
 			setResizable(false);
 			setTitle("MENU");
+			btnDice = new JButton("DICE");
+			btnDice.setIcon(new ImageIcon("menugame.jpg"));
+			btnDice.setEnabled(true);
+			btnDice.setBounds(304, 373, 200, 60);
+			getContentPane().add(btnDice);
+			backgroundmenugame = new BackgroundMenugame();
+			add(backgroundmenugame);
 			setVisible(true);
-		}
 }
