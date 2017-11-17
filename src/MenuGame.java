@@ -11,6 +11,10 @@ public class MenuGame  extends JFrame {
 		public MenuGame() {
 		
 		}
+		/**
+		 * Show the frame and image in the frame
+		 * @return the frame and image in the frame
+		 */
 		public void Show(){
 			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			setBounds(0, 173, 800, 800);
