@@ -18,5 +18,19 @@ import javax.swing.JTextField;
 
 public class MainGame extends JFrame {
 	
-
+private JLabel label_2;
+	private static JLabel NameAndPrice;
+	private static JLabel priceini;
+	private static JLabel price1;
+	private static JLabel price2;
+	private static JLabel price3;
+	private static JLabel villa;
+	private static JLabel NameAndPrice1;
+	private static JLabel priceini1;
+	private static JLabel price11;
+	private static JLabel price21;
+	private static JLabel price31;
+	private static JLabel villa1;
+	private static JLabel nameplayer;
+	private static JLabel namecomputer;
 }
