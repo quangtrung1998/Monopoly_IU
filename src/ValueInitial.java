@@ -1,8 +1,11 @@
 
 public class ValueInitial {
 	public ValueInitial() {
-		
 	}
+	/**
+	 * save and create the initial value
+	 * @return 	take and active this value
+	 */
 	public static void getValue(){
 		MainGame.inialmoney1=1000;
 		MainGame.inialmoney2=1000;
