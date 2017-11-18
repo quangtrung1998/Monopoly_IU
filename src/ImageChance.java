@@ -8,6 +8,15 @@ public class ImageChance extends JPanel{
 	public ImageChance() {
 		repaint();
 	}
+
+	public void change(int changeimage) {	
+		this.changeimage=changeimage;
+	}
+	public void paint(Graphics g)
+   	 {
+		g.drawImage(new ImageIcon(changeimage+".jpg").getImage(),0, 0,340,310,null);
+   	 }
+
 	/**
 	 * Change
 	 * @param   data was put 
@@ -24,4 +33,5 @@ public class ImageChance extends JPanel{
     {
 		g.drawImage(new ImageIcon(changeimage+".jpg").getImage(),0, 0,340,310,null);
     }
+
 }

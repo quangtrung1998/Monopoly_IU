@@ -34,6 +34,7 @@ public class Place {
 
 	public int getLocate() {
 		return locate;
+
 	}
 	public void work()
 	{
@@ -111,6 +112,7 @@ public class Place {
 			villa=1300;
 		}
 	}
+
 	public Color getColor() {
 		return color;
 	}
