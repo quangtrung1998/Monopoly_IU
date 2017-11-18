@@ -3,6 +3,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class BuyHouse extends Place{ //HouseOperation
+
 	public static int buy[][]=new int[4][1000];
 	private static MainGame game;
 	 public static void house(int a,int player)
