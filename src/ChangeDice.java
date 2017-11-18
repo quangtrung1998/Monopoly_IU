@@ -19,6 +19,24 @@ public class ChangeDice {
 	public static int getDiceleft() {
 		return diceleft;
 	}
+
+
+	public static void setDiceleft(int diceleft) {
+		if(diceleft==0)
+			ChangeDice.diceleft=0;
+		else
+		ChangeDice.diceleft = rand(1,6);
+	}
+	public static int getDiceright() {
+		return diceright;
+	}
+
+	public static void setDiceright(int c) {
+		if(c==0)
+			ChangeDice.diceright=0;
+		else 
+			ChangeDice.diceright = rand(1,6);
+	}
 }
 
 
