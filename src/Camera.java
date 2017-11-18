@@ -9,10 +9,19 @@ public class Camera extends JFrame {
 		public Camera() {
 			repaint();
 		}
-		public void change(int a) {
-			camerashow.change(a);
+		/**
+		 * Change
+		 * @param   data was put 
+		 * @return 	the change of camera show and paint again
+		 */
+		public void change(int data) {
+			camerashow.change(data);
 			repaint();
 		}
+		/**
+		 * Show the frame and image in the frame
+		 * @return 	the frame and image in the frame
+		 */
 		public void Show(){//EXIT_ON_CLOSE (3) – Đóng toàn bộ các frame liên quan tới nó.
 			//DO_NOTHING_ON_CLOSE (0) – không làm gì cả
 			// HIDE_ON_CLOSE (1) – Khi đóng frame sẽ bị ẩn đi chứ hoàn toàn không đóng lại.
