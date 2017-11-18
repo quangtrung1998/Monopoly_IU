@@ -68,5 +68,59 @@ public class BuyHouse extends Place{ //HouseOperation
 					 game.inialmoney1 =0;
 				 }
 			 }
+		  else if(buy[check][a]==3)
+			 {
+				 int n = JOptionPane.showOptionDialog(game,"It was bought you must pay "+price3+"$","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+				 if(player==2&&n==JOptionPane.YES_OPTION)
+				 {
+					 game.inialmoney1+=price3;
+					 game.inialmoney2-=price3;
+				 }
+				 else if(player==2&&n==JOptionPane.NO_OPTION)
+				 {
+					 game.inialmoney1+=price3;
+					 game.inialmoney2 =0;
+				 }
+				 else if(player==1&&n==JOptionPane.YES_OPTION)
+				 {
+					 game.inialmoney2+=price3;
+					 game.inialmoney1-=price3;
+				 }
+				 else if(player==1&&n==JOptionPane.NO_OPTION)
+				 {
+					 game.inialmoney2+=price3;
+					 game.inialmoney1 =0;
+				 }
+			 }
+			 else
+			 {
+				 int n = JOptionPane.showOptionDialog(game,"It was bought you must pay "+villa+"$","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+			 }
 		 }
+		 else if(buy[player][a]==0)
+		 {
+			 Object[] options = {"Yes, please","No, thanks"};
+			 int n = JOptionPane.showOptionDialog(game,"Would you like to buy it?","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+			 if(n==JOptionPane.YES_OPTION)
+			 {
+				
+				 	Object[] options1 = {"Buy 1 house","Buy 2 houses","Buy 3 houses"};
+				 	if(buy[player][a]!=3)
+				 	{
+				 	int n1 = JOptionPane.showOptionDialog(game,"How many houses you want to buy","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options1,options1[2]);
+				 	if(n1==JOptionPane.YES_OPTION)
+				 		{
+				 			buy[player][a]=1;
+				 			
+				 			if(player==1)
+				 			{
+				 				game.inialmoney1-=price1;
+				 				game.mode.addElement(a);
+				 			}
+				 			else if(player==2)
+				 			game.inialmoney2-=price1;
+					 		
+				 		}
+					}
+			 }
 }
