@@ -20,6 +20,7 @@ public class ChangeDice {
 		return diceleft;
 	}
 
+
 	public static void setDiceleft(int diceleft) {
 		if(diceleft==0)
 			ChangeDice.diceleft=0;

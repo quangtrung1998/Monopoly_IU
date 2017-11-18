@@ -1,4 +1,0 @@
-
-# Monopoly_IU
-ProjectNhom
-
