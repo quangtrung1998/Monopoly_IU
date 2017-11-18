@@ -33,4 +33,6 @@ private JLabel label_2;
 	private static JLabel villa1;
 	private static JLabel nameplayer;
 	private static JLabel namecomputer;
+	
+	// dasd
 }
