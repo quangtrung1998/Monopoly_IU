@@ -148,6 +148,7 @@ public class BuyHouse extends Place{ //HouseOperation
 				 		}
 				 	}	 				 	
 			 }
+
 		 }
 		 else if(buy[player][a]!=0&&buy[player][a]<=4) {
 			 if(buy[player][a]==1) {
