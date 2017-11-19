@@ -69,7 +69,8 @@ public class BuyHouse extends Place{ //HouseOperation
 					 game.inialmoney1 =0;
 				 }
 			 }
-			 else if(buy[check][a]==3)
+		  else if(buy[check][a]==3)
+
 			 {
 				 int n = JOptionPane.showOptionDialog(game,"It was bought you must pay "+price3+"$","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 				 if(player==2&&n==JOptionPane.YES_OPTION)
@@ -97,6 +98,7 @@ public class BuyHouse extends Place{ //HouseOperation
 			 {
 				 int n = JOptionPane.showOptionDialog(game,"It was bought you must pay "+villa+"$","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 			 }
+
 		 }
 		 else if(buy[player][a]==0)
 		 {
@@ -150,7 +152,4 @@ public class BuyHouse extends Place{ //HouseOperation
 			 }
 		 }
 		
-		 
-		
-	 }
-}
+
