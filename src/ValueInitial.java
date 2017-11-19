@@ -1,6 +1,7 @@
 
 public class ValueInitial {
 	public ValueInitial() {
+		
 	}
 	/**
 	 * save and create the initial value
@@ -22,7 +23,6 @@ public class ValueInitial {
 		Surface.x1=871;
 		Surface.y1=590;
 		Surface.ya1=1;
-		
 		for(int i=1;i<=2;i++)
 		{
 			for(int j=0;j<=40;j++)
