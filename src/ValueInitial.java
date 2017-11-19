@@ -1,4 +1,5 @@
 
+
 public class ValueInitial {
 	public ValueInitial() {
 		
@@ -30,3 +31,4 @@ public class ValueInitial {
 		}
 	}
 }
+
