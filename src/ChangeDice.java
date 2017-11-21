@@ -37,6 +37,8 @@ public class ChangeDice {
 		else 
 			ChangeDice.diceright = rand(1,6);
 	}
+	
+	
 }
 
 
