@@ -58,6 +58,7 @@ private JLabel label_2;
 			 int vil=place.getVilla();
 			 villa.setText("  4 STATION : "+vil);
 		}
+
 		else
 		{
 			 int pr =place.getPriceini();
