@@ -127,3 +127,17 @@ private JLabel label_2;
 			 int vil1=place.getVilla();
 			 villa1.setText("  4 STATION : "+vil1);	
 		}
+		 	else
+		{
+			int pr01 =place.getPriceini();
+			 priceini1.setText(" INITIAL PRICE : "+pr01);
+			 int pr11=place.getPrice1();
+			 price11.setText("  	1 HOUSE : "+pr11);
+			 int pr21=place.getPrice2();
+			 price21.setText("  	2 HOUSE : "+pr21);
+			 int pr31=place.getPrice3();
+			 price31.setText("  	3 HOUSE : "+pr31);
+			 int vil1=place.getVilla();
+			 villa1.setText("  VILLA : "+vil1);	
+		}
+	 }
