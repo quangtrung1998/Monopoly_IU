@@ -1,4 +1,5 @@
 
+
 import java.awt.Graphics;
 
 
@@ -57,4 +58,41 @@ class Surface extends JPanel {
 			xa1=1;
 		}
 	}
+	public void move1() {
+		if(y1==590&&x1>385)
+		{
+			x1-=54;
+			xa=1;
+		}
+		else if(x1==385)
+			x1-=60;
+		else if(x1==325&&y1==590)
+		{
+			y1-=72;
+			xa=2;
+		}
+		else if(x1==325&&y1>86)
+			y1-=54;
+		else if(x1==325&&y1==86)
+			y1-=72;
+		else if(y1==14&&x1<811)
+		{
+			x1+=54;
+			xa=3;
+		}
+		else if(y1==14&&x1==811)
+			x1+=60;
+		else if(x1==871&&y1==14)
+			y1+=72;
+		else if(x1==871&&y1<518)
+		{
+			y1+=54;
+			xa=4;
+		}
+		else if(x1==871&&y1==518)
+			{
+			y1+=72;
+			xa=1;
+			}
+		}
 }
