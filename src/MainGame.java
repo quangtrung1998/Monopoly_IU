@@ -39,6 +39,40 @@ private JLabel label_2;
 	protected static  int sum;
 	protected static  int sum1,prision1,prision2,sum2;
 	public static int inialmoney1=1000,inialmoney2=1000;
+	 public void house(int a)
+	 {
+		 Place place = new Place();
+		 place.setLocate(a);
+		 place.work();
+		 Color col = place.getColor();
+		 NameAndPrice.setBackground(col);
+		if(a==5||a==15||a==25||a==35) {
+		     int pr =place.getPriceini();
+			 priceini.setText(" INITIAL PRICE : "+pr);
+			 int pr1=place.getPrice1();
+			 price1.setText("  	1 STATION : "+pr1);
+			 int pr2=place.getPrice2();
+			 price2.setText("  	2 STATION : "+pr2);
+			 int pr3=place.getPrice3();
+			 price3.setText("  	3 STATION : "+pr3);
+			 int vil=place.getVilla();
+			 villa.setText("  4 STATION : "+vil);
+		}
+
+		else
+		{
+			 int pr =place.getPriceini();
+			 priceini.setText(" INITIAL PRICE : "+pr);
+			 int pr1=place.getPrice1();
+			 price1.setText("  	1 HOUSE : "+pr1);
+			 int pr2=place.getPrice2();
+			 price2.setText("  	2 HOUSE : "+pr2);
+			 int pr3=place.getPrice3();
+			 price3.setText("  	3 HOUSE : "+pr3);
+			 int vil=place.getVilla();
+			 villa.setText("  VILLA : "+vil);	
+		}
+	 }
 }
  public void house(int a)
 	 {
@@ -93,7 +127,9 @@ private JLabel label_2;
 			 int vil1=place.getVilla();
 			 villa1.setText("  4 STATION : "+vil1);	
 		}
-		else
+
+
+		 	else
 		{
 			int pr01 =place.getPriceini();
 			 priceini1.setText(" INITIAL PRICE : "+pr01);
