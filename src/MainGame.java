@@ -58,5 +58,19 @@ private JLabel label_2;
 			 int vil=place.getVilla();
 			 villa.setText("  4 STATION : "+vil);
 		}
+
+		else
+		{
+			 int pr =place.getPriceini();
+			 priceini.setText(" INITIAL PRICE : "+pr);
+			 int pr1=place.getPrice1();
+			 price1.setText("  	1 HOUSE : "+pr1);
+			 int pr2=place.getPrice2();
+			 price2.setText("  	2 HOUSE : "+pr2);
+			 int pr3=place.getPrice3();
+			 price3.setText("  	3 HOUSE : "+pr3);
+			 int vil=place.getVilla();
+			 villa.setText("  VILLA : "+vil);	
+		}
 	 }
 }
