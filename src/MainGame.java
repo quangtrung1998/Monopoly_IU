@@ -226,3 +226,31 @@ private JLabel label_2;
 			 villa1.setText("  VILLA : "+vil1);	
 		}
 	 }
+	public void init()
+	{
+		setLocationRelativeTo(null);
+		s = new Surface(this);
+		add(s);
+		setVisible(true);
+	}
+
+	private void move() {
+		s.move();
+		
+	}
+	private void move1() {
+		s.move1();
+	}
+
+	public static void run () throws InterruptedException {
+		
+		MainGame game = new MainGame();
+		cameracomputer = new CameraComputer();
+		camera = new Camera();
+		camerashow = new CameraShow();
+	    camerashowcomputer = new CameraShowComputer();
+		camera.add(camerashow);
+		cameracomputer.add(camerashowcomputer);
+		camera.Show();
+		cameracomputer.Show();
+	}
