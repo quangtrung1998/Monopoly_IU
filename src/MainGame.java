@@ -226,6 +226,10 @@ private JLabel label_2;
 			 villa1.setText("  VILLA : "+vil1);	
 		}
 	 }
+			/**
+		 * Set location frame and add class Surface to frame and show frame
+		 * @return 	show frame has surface
+		 */
 	public void init()
 	{
 		setLocationRelativeTo(null);
@@ -233,15 +237,21 @@ private JLabel label_2;
 		add(s);
 		setVisible(true);
 	}
-
+	/**
+	 * 	Move player
+	 * @return 	change location player and repaint
+	 */
 	private void move() {
 		s.move();
 		
 	}
+	/**
+	 * 	Move computer
+	 * @return 	change location computer and repaint
+	 */
 	private void move1() {
 		s.move1();
 	}
-
 	public static void run () throws InterruptedException {
 		
 		MainGame game = new MainGame();
