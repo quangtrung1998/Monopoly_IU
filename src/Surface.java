@@ -95,4 +95,40 @@ class Surface extends JPanel {
 			xa=1;
 			}
 		}
+	public Surface(MainGame game) { // MainGame game có hay không không quan trọng cho lắm cần coi kĩ khúc này
+		this.game= game;
+		repaint();// vẽ lại hình ảnh Nếu chỉ muốn vẽ lại 1 phần ta sử dụng phương thức:	repaint ( int x, int y,i nt width, int height )
+	}
+	/**
+	 * Change
+	 * @param   data was put 
+	 * @return 	the change of camera show 
+	 */
+	@Override
+    public void paint(Graphics g)
+    {	
+		g.drawImage(new ImageIcon("car4.png").getImage(),970, 20,40,40,null);
+		g.drawImage(new ImageIcon("xe4.png").getImage(),970, 300,40,40,null);
+    	g.drawImage(new ImageIcon("board.jpg").getImage(),300, 0,660,660,null);
+    	g.drawImage(new ImageIcon("dice"+ChangeDice.getDiceleft()+".png").getImage(), 500, 200, 120, 120,null);
+    	g.drawImage(new ImageIcon("dice"+ChangeDice.getDiceright()+".png").getImage(), 630, 200, 120, 120,null);
+    	g.drawImage(new ImageIcon("car"+xa1+".png").getImage(), x, y, 60,60,null);
+    	g.drawImage(new ImageIcon("xe"+xa+".png").getImage(), x1, y1, 50,50,null);
+    	ya=ChangeDice.getDiceleft()+ChangeDice.getDiceright();
+    	ya1=ChangeDice.getDiceleft()+ChangeDice.getDiceright();
+    }
+	/**
+	 * get value location of player
+	 * @return 	take value location of player
+	 */
+	public static int getYa() {
+		return ya;
+	}
+	/**
+	 * get value location of computer
+	 * @return 	take value location of computer
+	 */
+	public static int getYa1() {
+		return ya1;
+	}
 }

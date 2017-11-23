@@ -148,7 +148,6 @@ public class BuyHouse extends Place{ //HouseOperation
 				 		}
 				 	}	 				 	
 			 }
-
 		 }
 		 else if(buy[player][a]!=0&&buy[player][a]<=4) {
 			 if(buy[player][a]==1) {
@@ -180,7 +179,45 @@ public class BuyHouse extends Place{ //HouseOperation
 			 			
 			 		}
 			 }
-			
+			 else if(buy[player][a]==2) {
+				 Object[] options1 = {"Buy 3 houses","Buy Later"};
+				 	int n1 = JOptionPane.showOptionDialog(game,"Do you want to update your house","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options1,options1[1]);
+				 	if(n1==JOptionPane.YES_OPTION)
+			 		{
+			 			buy[player][a]=3;
+			 			if(player==1)
+			 			{
+			 				game.inialmoney1-=price1;
+			 			}
+			 			else if(player==2)
+			 			game.inialmoney2-=price1;
+				 		
+			 		}
+				 	else if(n1==JOptionPane.CANCEL_OPTION)
+			 		{
+			 			
+			 		}
+			 }
+			 else {
+				 Object[] options1 = {"Buy a villa ","Buy Later"};
+				 	int n1 = JOptionPane.showOptionDialog(game,"Do you want to update your house","NOTIFICATION",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options1,options1[1]);
+				 	if(n1==JOptionPane.YES_OPTION)
+			 		{
+			 			buy[player][a]=4;
+			 			if(player==1)
+			 			{
+			 				game.inialmoney1-=price1;
+			 			}
+			 			else if(player==2)
+			 			game.inialmoney2-=price1;
+				 		
+			 		}
+				 	else if(n1==JOptionPane.CANCEL_OPTION)
+			 		{
+			 			
+			 		}
+			 }
 		 }
+		
 	 }
 }
