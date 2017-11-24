@@ -1,12 +1,9 @@
-﻿import java.awt.Graphics;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-public class Camera extends JFrame {
-	public CameraShow camerashow;
-	private CameraShowComputer camerashowcomputer;
-		public Camera() {
+public class Camera extends JFrame implements ShowCamera{
+	private CameraShow camerashow;
+	public Camera() {
 			repaint();
 		}
 		/**
@@ -14,6 +11,7 @@ public class Camera extends JFrame {
 		 * @param   data was put 
 		 * @return 	the change of camera show and paint again
 		 */
+		@Override
 		public void change(int data) {
 			camerashow.change(data);
 			repaint();
@@ -22,6 +20,7 @@ public class Camera extends JFrame {
 		 * Show the frame and image in the frame
 		 * @return 	the frame and image in the frame
 		 */
+		@Override
 		public void Show(){//EXIT_ON_CLOSE (3) – Đóng toàn bộ các frame liên quan tới nó.
 			//DO_NOTHING_ON_CLOSE (0) – không làm gì cả
 			// HIDE_ON_CLOSE (1) – Khi đóng frame sẽ bị ẩn đi chứ hoàn toàn không đóng lại.
