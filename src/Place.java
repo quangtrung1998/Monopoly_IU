@@ -13,29 +13,57 @@ public class Place {
 	public void setLocate(int locate) {
 		this.locate = locate;
 	}
+	/**
+	 * get value nameplace
+	 * @return 	take value nameplace
+	 */
 	public int getNameplace() {
 		return nameplace;
 	}
+	/**
+	 * get value priceini
+	 * @return 	take value priceini
+	 */
 	public int getPriceini() {
 		return priceini;
 	}
+	/**
+	 * get value price1
+	 * @return 	take value price1
+	 */
 	public int getPrice1() {
 		return price1;
 	}
+	/**
+	 * get value price2
+	 * @return 	take value price2
+	 */
 	public int getPrice2() {
 		return price2;
 	}
+	/**
+	 * get value price3
+	 * @return 	take value price3
+	 */
 	public int getPrice3() {
 		return price3;
 	}
+	/**
+	 * get value villa
+	 * @return 	take value villa
+	 */
 	public int getVilla() {
 		return villa;
 	}
 
 	public int getLocate() {
 		return locate;
-
 	}
+	/**
+	 * get value from information of place
+	 * @return 	Color,priceini,price1,price2,price3,villa color,initial price,price when you buy 1 house,price when you buy 2
+	  house,price when you buy 3 house,price when you buy villa of place 
+	 */
 	public void work()
 	{
 		if(locate==1||locate==3)
@@ -45,6 +73,16 @@ public class Place {
 			price1=40;
 			price2=120;
 			price3=180;
+			villa=300;
+			
+		}
+		else if(locate==5||locate==15||locate==25||locate==35)
+		{
+			setColor(Color.BLACK);
+			priceini=200;
+			price1=100;
+			price2=150;
+			price3=200;
 			villa=300;
 			
 		}
@@ -112,10 +150,18 @@ public class Place {
 			villa=1300;
 		}
 	}
-
+	/**
+	 * get value color
+	 * @return 	take value color
+	 */
 	public Color getColor() {
 		return color;
 	}
+	/**
+	 * set value color
+	 * @param   color was given
+	 * @return 	change value of color
+	 */
 	public void setColor(Color color) {
 		this.color = color;
 	}
