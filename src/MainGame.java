@@ -228,25 +228,15 @@ public class MainGame extends JFrame {
 	public static void run () throws InterruptedException {
 		
 		MainGame game = new MainGame();
-		CameraComputer cameracomputer = new CameraComputer();
-		Camera camera = new Camera();
-		CameraShow camerashow = new CameraShow();
-	    CameraShowComputer camerashowcomputer = new CameraShowComputer();
-		camera.add(camerashow);
-		cameracomputer.add(camerashowcomputer);
+		CameraComputer cameracomputer = new CameraComputer();// xóa class extend CameraComputer
+		Camera camera = new Camera();// xóa class extend Camera
 		camera.shown();
 		cameracomputer.shown();
-		Chance chance = new Chance();
-		ImageChance imagechance = new ImageChance();
-		chance.add(imagechance);
+		Chance chance = new Chance();// xóa class extend Chance
 		chance.shown();
-		CommunityChest communitychest = new CommunityChest();
-		ImageCommunityChest imagecommunitychest = new ImageCommunityChest();
-		communitychest.add(imagecommunitychest);
+		CommunityChest communitychest = new CommunityChest();// xóa class extend CommunityChest
 		communitychest.shown();
-		CameraDice cameradice = new CameraDice();
-		CameraShowDice camerashowdice = new CameraShowDice();
-		cameradice.add(camerashowdice);
+		CameraDice cameradice = new CameraDice();  // xóa class extend cameradice
 		cameradice.shown();
 		while(inialmoney1>=0&&inialmoney2>=0)
 		{	nameplayer.setText("Your money : $"+inialmoney1);
