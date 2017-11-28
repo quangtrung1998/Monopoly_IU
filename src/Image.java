@@ -1,7 +1,4 @@
 import java.awt.Graphics;
-
-
-
 public interface Image {
 	/**
 	 * Change
