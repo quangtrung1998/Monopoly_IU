@@ -1,4 +1,4 @@
-import javax.swing.JFrame;
+
 
 public interface ShowCamera {
 	/**
@@ -11,5 +11,6 @@ public interface ShowCamera {
 	 * Show the frame and image in the frame
 	 * @return 	the frame and image in the frame
 	 */
-	public void Show();
+	public void shown();
+	
 }
