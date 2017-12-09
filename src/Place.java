@@ -3,15 +3,15 @@
 import java.awt.Color;
 
 public class Place {
-	public int locate,priceini;
-	public static int price1;
-	public static int price2;
-	public static int price3;
-	public static int villa;
-	public int nameplace;
+	private static int locate,priceini;
+	private static int price1;
+	private static int price2;
+	private static int price3;
+	private static int villa;
+	private int nameplace;
 	private Color color;
 	public void setLocate(int locate) {
-		this.locate = locate;
+		Place.locate = locate;
 	}
 	/**
 	 * get value nameplace
@@ -24,35 +24,35 @@ public class Place {
 	 * get value priceini
 	 * @return 	take value priceini
 	 */
-	public int getPriceini() {
+	public static int  getPriceini() {
 		return priceini;
 	}
 	/**
 	 * get value price1
 	 * @return 	take value price1
 	 */
-	public int getPrice1() {
+	public static int getPrice1() {
 		return price1;
 	}
 	/**
 	 * get value price2
 	 * @return 	take value price2
 	 */
-	public int getPrice2() {
+	public static int getPrice2() {
 		return price2;
 	}
 	/**
 	 * get value price3
 	 * @return 	take value price3
 	 */
-	public int getPrice3() {
+	public static int getPrice3() {
 		return price3;
 	}
 	/**
 	 * get value villa
 	 * @return 	take value villa
 	 */
-	public int getVilla() {
+	public static int getVilla() {
 		return villa;
 	}
 

@@ -3,7 +3,8 @@ import java.util.Random;
 
 
 public class ChangeDice {
-	private static int diceleft,diceright;
+	private static int diceleft;
+	private static int diceright;
 	/**
 	 * compute the random number
 	 * @param   min value minimum 
@@ -14,8 +15,7 @@ public class ChangeDice {
 	        try {
 	            Random rn = new Random();
 	            int range = max - min + 1;
-	            int randomNum = min + rn.nextInt(range);
-	            return randomNum;
+	            return min + rn.nextInt(range);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	            return -1;
@@ -57,8 +57,6 @@ public class ChangeDice {
 		else 
 			ChangeDice.diceright = rand(1,6);
 	}
-	
-	
 }
 
 

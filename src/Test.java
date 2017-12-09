@@ -1,18 +1,18 @@
 
 public class Test {
 	private static int a;
-   /**
-		 * Change
-		 * @return 	the value a
-		 */
+	/**
+	 * get value 
+	 * @return 	take value 
+	 */
 	public static int getA() {
 		return a;
 	}
-  /**
-		 * Change
-		 * @param   data was put 
-		 * @return 	the change a value
-		 */
+	/**
+	 * set value 
+	 * @param input value
+	 * @return 	change value 
+	 */
 	public static void setA(int a) {
 		Test.a = a;
 	}

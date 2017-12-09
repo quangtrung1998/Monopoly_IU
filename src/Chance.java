@@ -2,6 +2,7 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class Chance extends JFrame{
 	private ImageChance imagechance;
 	public Chance() {
@@ -31,8 +32,7 @@ public class Chance extends JFrame{
         try {
             Random rn = new Random();
             int range = max - min + 1;
-            int randomNum = min + rn.nextInt(range);
-            return randomNum;
+            return (min + rn.nextInt(range));
         } catch (Exception e) {
             e.printStackTrace();
             return -1;
@@ -42,14 +42,14 @@ public class Chance extends JFrame{
 	 * Show the frame and image in the frame
 	 * @return 	the frame and image in the frame
 	 */
-	public void Show() throws InterruptedException {
+	public void shown() {
 	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Chỉ đóng frame đó, các frame khác liên quan sẽ không bị đóng.
-		setBounds(22, 173, 340, 342);
+		setBounds(800, 343, 340, 342);
 		setResizable(false);
 		setTitle("CHANCE");
 		imagechance = new ImageChance();
 		add(imagechance);
-		setVisible(true);
+		setVisible(false);
 	}
 }

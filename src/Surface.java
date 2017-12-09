@@ -1,102 +1,129 @@
 
-
 import java.awt.Graphics;
 
 
-
-
-
-
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComponent;
+
 import javax.swing.JPanel;
-
-
-
 
 class Surface extends JPanel {
 
-	
 	private static final long serialVersionUID = -5843034358426716656L;
-	public static int x = 871, y = 590,xa = 1, xa1=1, ya = 1,x1=871,y1=590,ya1=1;
-	private MainGame game;
+	private static int xplayer = 871;
+	private static int yplayer = 590;
+	private static int xa = 1;
+	private static int xa1=1;
+	private static int ya = 1;
+	private static int xcomputer=871;
+	private static int ycomputer=590;
+	public static void setXplayer(int xplayer) {
+		Surface.xplayer = xplayer;
+	}
+	public static void setYplayer(int yplayer) {
+		Surface.yplayer = yplayer;
+	}
+	public static void setXa(int xa) {
+		Surface.xa = xa;
+	}
+	public static void setXa1(int xa1) {
+		Surface.xa1 = xa1;
+	}
+	public static void setYa(int ya) {
+		Surface.ya = ya;
+	}
+	public static void setXcomputer(int xcomputer) {
+		Surface.xcomputer = xcomputer;
+	}
+	public static void setYcomputer(int ycomputer) {
+		Surface.ycomputer = ycomputer;
+	}
+	public static void setYa1(int ya1) {
+		Surface.ya1 = ya1;
+	}
+	private static int ya1=1;
+	/**
+	 * Change the location of vertical and horizontal of player in the board
+	 * @return 	Change the location of vertical and horizontal
+	 */
 	public void move() {
-		if(y==590&&x>385)
+		if(yplayer==590&&xplayer>385)
 		{
-			x-=54;
-			xa1=1;
+		xplayer-=54;//a*9/200
+		xa1=1;
 		}
-		else if(x==385)
-		x-=60;
-		else if(x==325&&y==590)
+		else if(xplayer==385)
+		xplayer-=60; // a/20
+		else if(xplayer==325&&yplayer==590)
 		{
-			y-=72;
+			yplayer-=72; //b*72/695
 			xa1=2;
 		}
-		else if(x==325&&y>86)
-		y-=54;
-		else if(x==325&&y==86)
-		y-=72;
-		else if(y==14&&x<811)
+		else if(xplayer==325&&yplayer>86)
+		yplayer-=54;
+		else if(xplayer==325&&yplayer==86)
+		yplayer-=72;
+		else if(yplayer==14&&xplayer<811)
 		{
-			x+=54;
+			xplayer+=54;
 			xa1=3;
 		}
-		else if(y==14&&x==811)
-		x+=60;
-		else if(x==871&&y==14)
-		y+=72;
-		else if(x==871&&y<518)
+		else if(yplayer==14&&xplayer==811)
+		xplayer+=60;
+		else if(xplayer==871&&yplayer==14)
+		yplayer+=72;
+		else if(xplayer==871&&yplayer<518)
 		{
-			y+=54;
+			yplayer+=54;
 			xa1=4;
 		}
-		else if(x==871&&y==518)
+		else if(xplayer==871&&yplayer==518)
 		{
-			y+=72;
+			yplayer+=72;
 			xa1=1;
 		}
 	}
+	/**
+	 * Change the location of vertical and horizontal of computer in the board
+	 * @return 	Change the location of vertical and horizontal
+	 */
 	public void move1() {
-		if(y1==590&&x1>385)
+		if(ycomputer==590&&xcomputer>385)
 		{
-			x1-=54;
+			xcomputer-=54;
 			xa=1;
 		}
-		else if(x1==385)
-			x1-=60;
-		else if(x1==325&&y1==590)
+		else if(xcomputer==385)
+			xcomputer-=60;
+		else if(xcomputer==325&&ycomputer==590)
 		{
-			y1-=72;
+			ycomputer-=72;
 			xa=2;
 		}
-		else if(x1==325&&y1>86)
-			y1-=54;
-		else if(x1==325&&y1==86)
-			y1-=72;
-		else if(y1==14&&x1<811)
+		else if(xcomputer==325&&ycomputer>86)
+			ycomputer-=54;
+		else if(xcomputer==325&&ycomputer==86)
+			ycomputer-=72;
+		else if(ycomputer==14&&xcomputer<811)
 		{
-			x1+=54;
+			xcomputer+=54;
 			xa=3;
 		}
-		else if(y1==14&&x1==811)
-			x1+=60;
-		else if(x1==871&&y1==14)
-			y1+=72;
-		else if(x1==871&&y1<518)
+		else if(ycomputer==14&&xcomputer==811)
+			xcomputer+=60;
+		else if(xcomputer==871&&ycomputer==14)
+			ycomputer+=72;
+		else if(xcomputer==871&&ycomputer<518)
 		{
-			y1+=54;
+			ycomputer+=54;
 			xa=4;
 		}
-		else if(x1==871&&y1==518)
+		else if(xcomputer==871&&ycomputer==518)
 			{
-			y1+=72;
+			ycomputer+=72;
 			xa=1;
 			}
 		}
 	public Surface(MainGame game) { // MainGame game có hay không không quan trọng cho lắm cần coi kĩ khúc này
-		this.game= game;
 		repaint();// vẽ lại hình ảnh Nếu chỉ muốn vẽ lại 1 phần ta sử dụng phương thức:	repaint ( int x, int y,i nt width, int height )
 	}
 	/**
@@ -106,14 +133,12 @@ class Surface extends JPanel {
 	 */
 	@Override
     public void paint(Graphics g)
-    {	
+    {	g.drawImage(new ImageIcon("background1.png").getImage(),0, 0, 1200, 695,null);
 		g.drawImage(new ImageIcon("car4.png").getImage(),970, 20,40,40,null);
 		g.drawImage(new ImageIcon("xe4.png").getImage(),970, 300,40,40,null);
-    	g.drawImage(new ImageIcon("board.jpg").getImage(),300, 0,660,660,null);
-    	g.drawImage(new ImageIcon("dice"+ChangeDice.getDiceleft()+".png").getImage(), 500, 200, 120, 120,null);
-    	g.drawImage(new ImageIcon("dice"+ChangeDice.getDiceright()+".png").getImage(), 630, 200, 120, 120,null);
-    	g.drawImage(new ImageIcon("car"+xa1+".png").getImage(), x, y, 60,60,null);
-    	g.drawImage(new ImageIcon("xe"+xa+".png").getImage(), x1, y1, 50,50,null);
+    	g.drawImage(new ImageIcon("board.jpg").getImage(),300, 0,1200*11/20,660,null);
+    	g.drawImage(new ImageIcon("car"+xa1+".png").getImage(), xplayer, yplayer, 60,60,null);
+    	g.drawImage(new ImageIcon("xe"+xa+".png").getImage(), xcomputer, ycomputer, 50,50,null);
     	ya=ChangeDice.getDiceleft()+ChangeDice.getDiceright();
     	ya1=ChangeDice.getDiceleft()+ChangeDice.getDiceright();
     }
@@ -131,4 +156,5 @@ class Surface extends JPanel {
 	public static int getYa1() {
 		return ya1;
 	}
+ 
 }

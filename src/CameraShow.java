@@ -3,9 +3,10 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-public class CameraShow extends JPanel{
+@SuppressWarnings("serial")
+public class CameraShow extends JPanel implements Image{
 	private static int changeimage;
-	private static BuyHouse buyhouse;
+	private static final String list[] = {"house.png","hotel.png","housecomputer.png","hotelcomputer.png"};
 	public CameraShow() {
 		repaint();
 	}
@@ -15,53 +16,55 @@ public class CameraShow extends JPanel{
 	 * @return 	data change
 	 */
 	public void change(int changeimage) {	
-		this.changeimage=changeimage;
+		CameraShow.changeimage=changeimage;
 	}
 	/**
 	 * 	Draw Image
 	 * @param 	Graphics g , address image, location horizontal , location vertical , width , height 
 	 * @return 	show the image in the frame
 	 */
-	private void paint1(Graphics g,String path,int x,int y,int width,int height) { // create function to save time 
+	@Override
+	public void paint1(Graphics g,String path,int x,int y,int width,int height) { // create function to save time 
 		g.drawImage(new ImageIcon(path).getImage(),x, y,width,height,null);
 	}/**
 	 * 	Draw Image
 	 * @param 	Graphics g 
 	 * @return 	show the image in the frame
 	 */
+	@Override
 	public void paint(Graphics g)
     {
 		paint1(g,changeimage+".jpg",0,0,340,310);
-		if(buyhouse.buy[1][changeimage]==1) {
-			paint1(g,"house.png",120, 120,60,60);
+		if(BuyHouse.getBuy()[1][changeimage]==1) {
+			paint1(g,list[0],120, 120,60,60);
 			
 		}
-		else if(buyhouse.buy[1][changeimage]==2) {
-			paint1(g,"house.png",90, 120,60,60);
-			paint1(g,"house.png",150, 120,60,60);
+		else if(BuyHouse.getBuy()[1][changeimage]==2) {
+			paint1(g,list[0],90, 120,60,60);
+			paint1(g,list[0],150, 120,60,60);
 		}
-		else if(buyhouse.buy[1][changeimage]==3) {
-			paint1(g,"house.png",90, 120,60,60);
-			paint1(g,"house.png",150, 120,60,60);
-			paint1(g,"house.png",210, 120,60,60);
+		else if(BuyHouse.getBuy()[1][changeimage]==3) {
+			paint1(g,list[0],90, 120,60,60);
+			paint1(g,list[0],150, 120,60,60);
+			paint1(g,list[0],210, 120,60,60);
 		}
-		else if(buyhouse.buy[1][changeimage]==4) {
-			paint1(g,"hotel.png",120, 120,60,60);
+		else if(BuyHouse.getBuy()[1][changeimage]==4) {
+			paint1(g,list[1],120, 120,60,60);
 		}
-		else if(buyhouse.buy[2][changeimage]==1) {
-			paint1(g,"housecomputer.png",120, 120,60,60);
+		else if(BuyHouse.getBuy()[2][changeimage]==1) {
+			paint1(g,list[2],120, 120,60,60);
 		}
-		else if(buyhouse.buy[2][changeimage]==2) {
-			paint1(g,"housecomputer.png",90, 120,60,60);
-			paint1(g,"housecomputer.png",150, 120,60,60);
+		else if(BuyHouse.getBuy()[2][changeimage]==2) {
+			paint1(g,list[2],90, 120,60,60);
+			paint1(g,list[2],150, 120,60,60);
 		}
-		else if(buyhouse.buy[2][changeimage]==3) {
-			paint1(g,"housecomputer.png",90, 120,60,60);
-			paint1(g,"housecomputer.png",150, 120,60,60);
-			paint1(g,"housecomputer.png",210, 120,60,60);
+		else if(BuyHouse.getBuy()[2][changeimage]==3) {
+			paint1(g,list[2],90, 120,60,60);
+			paint1(g,list[2],150, 120,60,60);
+			paint1(g,list[2],210, 120,60,60);
 		}
-		else if(buyhouse.buy[2][changeimage]==4) {
-			paint1(g,"hotelcomputer.png",120, 120,60,60);
+		else if(BuyHouse.getBuy()[2][changeimage]==4) {
+			paint1(g,list[3],120, 120,60,60);
 		}
     }
 }

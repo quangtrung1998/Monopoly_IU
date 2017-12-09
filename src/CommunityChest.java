@@ -2,6 +2,7 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class CommunityChest extends JFrame{
 	ImageCommunityChest imagecommunitychest;
 	public CommunityChest() {
@@ -42,14 +43,14 @@ public class CommunityChest extends JFrame{
 	 * Show the frame and image in the frame
 	 * @return 	the frame and image in the frame
 	 */
-	public void Show() throws InterruptedException {
+	public void shown() {
 	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Chỉ đóng frame đó, các frame khác liên quan sẽ không bị đóng.
-		setBounds(22, 518, 340, 345);
+		setBounds(800, 343, 340, 342);
 		setResizable(false);
 		setTitle("COMMUNITYCHEST");
 		imagecommunitychest = new ImageCommunityChest();
 		add(imagecommunitychest);
-		setVisible(true);
+		setVisible(false);
 	}
 }
