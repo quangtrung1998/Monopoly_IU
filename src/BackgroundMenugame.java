@@ -3,10 +3,7 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-<<<<<<< HEAD
 @SuppressWarnings("serial")
-=======
->>>>>>> df75969e9ed26b45e4aea928ecd9515086f867cd
 public class BackgroundMenugame extends JPanel implements Image{
 	/**
 	 * 	Paint again
@@ -38,10 +35,5 @@ public class BackgroundMenugame extends JPanel implements Image{
     }
 	@Override
 	public void change(int changeimage) {
-<<<<<<< HEAD
-=======
-		// TODO Auto-generated method stub
-		
->>>>>>> df75969e9ed26b45e4aea928ecd9515086f867cd
 	}
 }
