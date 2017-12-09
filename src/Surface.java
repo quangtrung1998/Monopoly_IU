@@ -48,6 +48,7 @@ class Surface extends JPanel {
 	public void move() {
 		if(yplayer==590&&xplayer>385)
 		{
+<<<<<<< HEAD
 		xplayer-=54;//a*9/200
 		xa1=1;
 		}
@@ -56,6 +57,16 @@ class Surface extends JPanel {
 		else if(xplayer==325&&yplayer==590)
 		{
 			yplayer-=72; //b*72/695
+=======
+		xplayer-=54;
+		xa1=1;
+		}
+		else if(xplayer==385)
+		xplayer-=60;
+		else if(xplayer==325&&yplayer==590)
+		{
+			yplayer-=72;
+>>>>>>> df75969e9ed26b45e4aea928ecd9515086f867cd
 			xa1=2;
 		}
 		else if(xplayer==325&&yplayer>86)
@@ -133,10 +144,17 @@ class Surface extends JPanel {
 	 */
 	@Override
     public void paint(Graphics g)
+<<<<<<< HEAD
     {	g.drawImage(new ImageIcon("background1.png").getImage(),0, 0, 1200, 695,null);
 		g.drawImage(new ImageIcon("car4.png").getImage(),970, 20,40,40,null);
 		g.drawImage(new ImageIcon("xe4.png").getImage(),970, 300,40,40,null);
     	g.drawImage(new ImageIcon("board.jpg").getImage(),300, 0,1200*11/20,660,null);
+=======
+    {	
+	g.drawImage(new ImageIcon("car4.png").getImage(),970, 20,40,40,null);
+	g.drawImage(new ImageIcon("xe4.png").getImage(),970, 300,40,40,null);
+    	g.drawImage(new ImageIcon("board.jpg").getImage(),300, 0,660,660,null);
+>>>>>>> df75969e9ed26b45e4aea928ecd9515086f867cd
     	g.drawImage(new ImageIcon("car"+xa1+".png").getImage(), xplayer, yplayer, 60,60,null);
     	g.drawImage(new ImageIcon("xe"+xa+".png").getImage(), xcomputer, ycomputer, 50,50,null);
     	ya=ChangeDice.getDiceleft()+ChangeDice.getDiceright();
@@ -157,4 +175,8 @@ class Surface extends JPanel {
 		return ya1;
 	}
  
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> df75969e9ed26b45e4aea928ecd9515086f867cd
