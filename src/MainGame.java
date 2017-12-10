@@ -13,28 +13,88 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class MainGame extends JFrame {
+	/**
+	 * Name of place
+	 */
 	private static JLabel namePrice;
+	/**
+	 * 	Price of place was bought and don't build anything
+	 */
 	private static JLabel priceini;
+	/**
+	 * 	Price of place was bougth and build 1 house
+	 */
 	private static JLabel price1;
+	/**
+	 * 	Price of place was bougth and build 2 house
+	 */
 	private static JLabel price2;
+	/**
+	 * 	Price of place was bougth and build 3 house
+	 */
 	private static JLabel price3;
+	/**
+	 * 	Price of place was bougth and build villa
+	 */
 	private static JLabel villa;
+	/**
+	 * Name of place int the combobox
+	 */
 	private static JLabel namePrice1;
+	/**
+	 * 	Price of place was bougth and don't build anything in the combobox
+	 */
 	private static JLabel priceini1;
+	/**
+	 * 	Price of place was bougth and build 1 house in the combobox
+	 */
 	private static JLabel price11;
+	/**
+	 * 	Price of place was bougth and build 2 house in the combobox
+	 */
 	private static JLabel price21;
+	/**
+	 * 	Price of place was bougth and build 3 house in the combobox
+	 */
 	private static JLabel price31;
+	/**
+	 * 	Price of place was bougth and build villa in the combobox
+	 */
 	private static JLabel villa1;
-	private static JLabel nameplayer;
-	private static JLabel namecomputer;
+	/**
+	 * 	Money of player
+	 */
+	private static JLabel moneyPlayer;
+	/**
+	 * 	Money of computer
+	 */
+	private static JLabel moneyComputer;
 	private static Surface s;
 	private static JButton button;
 	private static int sum;
+	/**
+	 * 	location player move
+	 */
 	private static int locationPlayer;
+	/**
+	 * 	Số lượt để ra tù của player
+	 */
 	private static int prision1;
+	/**
+	 * 	Số lượt để ra tù của computer
+	 */
 	private static int prision2;
+	/**
+	 * 	location computer move
+	 */
 	private static int locationComputer;
+	/**
+	 * 	money of player
+	 */
 	private static int inialmoney1 = 1500;
+	/**
+	 * 	money of computer
+	 */
 	private static int inialmoney2 = 1500;
 	private static boolean conditionMove ;
 	private static DefaultComboBoxModel<Object> mode;
@@ -45,6 +105,10 @@ public class MainGame extends JFrame {
 	private static final String STRINGPRICE2 = " Station : ";
 	private static final String STRINGPRICE3 = " Villa: ";
 	private static final String STRINGFONT = "Bradley Hand ITC";
+	/**
+	 * When call new create frame panel label picture in initial time
+	 * @return 	show in the gui
+	 */
 	public MainGame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(150, 140, 1200, 695);
@@ -111,14 +175,14 @@ public class MainGame extends JFrame {
 		villa1.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
 		villa1.setBounds(30, 234, 240, 50);
 		panel_2.add(villa1);
-		nameplayer = new JLabel();
-		nameplayer.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-		nameplayer.setBounds(1020, 30, 400, 28);
-		add(nameplayer);
-		namecomputer = new JLabel();
-		namecomputer.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-		namecomputer.setBounds(1010, 310, 400, 28);
-		add(namecomputer);
+		moneyPlayer = new JLabel();
+		moneyPlayer.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		moneyPlayer.setBounds(1020, 30, 400, 28);
+		add(moneyPlayer);
+		moneyComputer = new JLabel();
+		moneyComputer.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+		moneyComputer.setBounds(1010, 310, 400, 28);
+		add(moneyComputer);
 		comboBox = new JComboBox<Object>();
 		comboBox.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
 		mode = new DefaultComboBoxModel<>();
@@ -126,74 +190,137 @@ public class MainGame extends JFrame {
 		comboBox.setModel(mode);
 		comboBox.setBounds(0, 0, 300, 40);
 		add(comboBox);
-		init();
+		setLocationRelativeTo(null);
+		s = new Surface(this);
+		add(s);
+		setVisible(true);
 	}
 	public static boolean isConditionMove() {
 		return conditionMove;
 	}
+	/**
+	 * set value of conditionmove
+	 * @param conditionMove : value input
+	 * @return 	change the value of conditionmove
+	 */
 	public static void setConditionMove(boolean conditionMove) {
 		MainGame.conditionMove = conditionMove;
 	}
 	public static DefaultComboBoxModel<Object> getMode() {
 		return mode;
 	}
+	/**
+	 * set value of mode
+	 * @param mode : value input
+	 * @return 	change the value of mode
+	 */
 	public static void setMode(DefaultComboBoxModel<Object> mode) {
 		MainGame.mode = mode;
 	}
 	public static JComboBox<Object> getComboBox() {
 		return comboBox;
 	}
+	/**
+	 * set value of comboBox
+	 * @param combobox : value input
+	 * @return 	change the value of comboBox
+	 */
 	public static void setComboBox(JComboBox<Object> comboBox) {
 		MainGame.comboBox = comboBox;
 	}
 	public static int getPlayer1() {
 		return player1;
 	}
+	/**
+	 * set value of player1
+	 * @param player1 : value input
+	 * @return 	change the value of player1
+	 */
 	public static void setPlayer1(int player1) {
 		MainGame.player1 = player1;
 	}
 	public static int getSum() {
 		return sum;
 	}
+	/**
+	 * set value of sum
+	 * @param sum : value input
+	 * @return 	change the value of sum
+	 */
 	public static void setSum(int sum) {
 		MainGame.sum = sum;
 	}
 	public static int getPrision1() {
 		return prision1;
 	}
+	/**
+	 * set value of prision1
+	 * @param prision1 : value input
+	 * @return 	change the value of prision1
+	 */
 	public static void setPrision1(int prision1) {
 		MainGame.prision1 = prision1;
 	}
 	public static int getPrision2() {
 		return prision2;
 	}
+	/**
+	 * set value of prision2
+	 * @param prision2 : value input
+	 * @return 	change the value of prision2
+	 */
 	public static void setPrision2(int prision2) {
 		MainGame.prision2 = prision2;
 	}
 	public static int getInialmoney1() {
 		return inialmoney1;
 	}
+	/**
+	 * set value of inialmoney1
+	 * @param inialmoney1 : value input
+	 * @return 	change the value of inialmoney1
+	 */
 	public static void setInialmoney1(int inialmoney1) {
 		MainGame.inialmoney1 = inialmoney1;
 	}
 	public static int getInialmoney2() {
 		return inialmoney2;
 	}
+	/**
+	 * set value of inialmoney2
+	 * @param inialmoney2 : value input
+	 * @return 	change the value of inialmoney2
+	 */
 	public static void setInialmoney2(int inialmoney2) {
 		MainGame.inialmoney2 = inialmoney2;
 	}
 	public static int getLocationPlayer() {
 		return locationPlayer;
 	}
+	/**
+	 * set value of locationPlayer
+	 * @param locationPlayer : value input
+	 * @return 	change the value of locationPlayer
+	 */
 	public static void setLocationPlayer(int locationPlayer) {
 		MainGame.locationPlayer = locationPlayer;
 	}
 	public static int getLocationComputer() {
 		return locationComputer;
 	}
+	/**
+	 * set value of locationComputer
+	 * @param locationComputer : value input
+	 * @return 	change the value of locationComputer
+	 */
 	public static void setLocationComputer(int locationComputer) {
 		MainGame.locationComputer = locationComputer;
 	}
+	/**
+	 * Change value of picture in the frame when player or computer move to station
+	 * @param a : locate of player or computer
+	 * @return 	change the value 
+	 */
 	public void house(int a)
 	{
 		Place place = new Place();
@@ -227,6 +354,11 @@ public class MainGame extends JFrame {
 			villa.setText(STRINGPRICE3 + vil);
 		}
 	}
+	/**
+	 * Change value of picture in the frame when player use the Jcombobox
+	 * @param a : locate of player or computer
+	 * @return 	change the value 
+	 */
 	public void houseBought(int a)
 	{
 		Place place = new Place();
@@ -261,17 +393,6 @@ public class MainGame extends JFrame {
 		}
 	}
 	/**
-	* Set location frame and add class Surface to frame and show frame
-	* @return 	show frame has surface
-	*/
-	public void init()
-	{
-		setLocationRelativeTo(null);
-		s = new Surface(this);
-		add(s);
-		setVisible(true);
-	}
-	/**
 	* 	Move player
 	* @return 	change location player and repaint
 	*/
@@ -289,18 +410,18 @@ public class MainGame extends JFrame {
 		MainGame game = new MainGame();
 		CameraComputer cameracomputer = new CameraComputer();
 		Camera camera = new Camera();
+		Chance chance = new Chance();
+		CommunityChest communitychest = new CommunityChest();
+		CameraDice cameradice = new CameraDice();
 		camera.shown();
 		cameracomputer.shown();
-		Chance chance = new Chance();
 		chance.shown();
-		CommunityChest communitychest = new CommunityChest();
 		communitychest.shown();
-		CameraDice cameradice = new CameraDice();
 		cameradice.shown();
 		while (inialmoney1 >= 0 && inialmoney2 >= 0)
 		{
-			nameplayer.setText("Your money : $" + inialmoney1);
-			namecomputer.setText("Com's money : $" + inialmoney2);
+			moneyPlayer.setText("Your money : $" + inialmoney1);
+			moneyComputer.setText("Com's money : $" + inialmoney2);
 			if (player1 == 1 && prision1 == 0)
 			{
 				sum = 0;
