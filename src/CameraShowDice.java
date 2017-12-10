@@ -5,13 +5,16 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class CameraShowDice extends JPanel implements Image{
-
+	/**
+	 * Change
+	 * @return 	data change and paint again
+	 */
 	public CameraShowDice() {
 		repaint();
 	}
 	/**
 	 * Change
-	 * @param   data was put 
+	 * @param   changeimage : value input 
 	 * @return 	data change
 	 */
 	@Override
@@ -21,7 +24,12 @@ public class CameraShowDice extends JPanel implements Image{
 
 	/**
 	 * 	Draw Image
-	 * @param 	Graphics g , address image, location horizontal , location vertical , width , height 
+	 * @param 	g : Graphics g
+	 * @param 	path : address image
+	 * @param 	x : location horizontal 
+	 * @param	y : location vertical 
+	 * @param	width : value of width
+	 * @param	height : value of height
 	 * @return 	show the image in the frame
 	 */
 	@Override

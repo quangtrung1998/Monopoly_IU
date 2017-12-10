@@ -3,20 +3,25 @@ public interface Image {
 //	Interface chỉ ra đời vì lý do trong Java ko được thừa kế nhiều lớp. còn implements thì thoải mái. 
 	/**
 	 * Change
-	 * @param   data was put 
+	 * @param   changeimage : value input 
 	 * @return 	data change
 	 */
-	 void change(int changeimage);
+	 public void change(int changeimage);
+	 /**
+		 * 	Draw Image
+		 * @param 	g : Graphics g
+		 * @param 	path : address image
+		 * @param 	x : location horizontal 
+		 * @param	y : location vertical 
+		 * @param	width : value of width
+		 * @param	height : value of height
+		 * @return 	show the image in the frame
+		 */
+	 public void paint1(Graphics g,String path,int x,int y,int width,int height);
 	/**
 	 * 	Draw Image
-	 * @param 	Graphics g , address image, location horizontal , location vertical , width , height 
+	 * @param 	g : Graphis g
 	 * @return 	show the image in the frame
 	 */
-	 void paint1(Graphics g,String path,int x,int y,int width,int height);
-	/**
-	 * 	Draw Image
-	 * @param 	Graphics g 
-	 * @return 	show the image in the frame
-	 */
-	 void paint(Graphics g);
+	 public void paint(Graphics g);
 }

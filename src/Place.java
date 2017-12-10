@@ -11,6 +11,11 @@ public class Place {
 	private static int villa;
 	private int nameplace;
 	private Color color;
+	/**
+	 * set value villa
+	 * @param locate : value input
+	 * @return 	change value of locate
+	 */
 	public void setLocate(int locate) {
 		Place.locate = locate;
 	}
@@ -56,7 +61,10 @@ public class Place {
 	public static int getVilla() {
 		return villa;
 	}
-
+	/**
+	 * get value locate
+	 * @return 	take value locate
+	 */
 	public int getLocate() {
 		return locate;
 	}
@@ -65,7 +73,7 @@ public class Place {
 	 * @return 	Color,priceini,price1,price2,price3,villa color,initial price,price when you buy 1 house,price when you buy 2
 	  house,price when you buy 3 house,price when you buy villa of place 
 	 */
-	public synchronized void work()
+	public void work()
 	{
 		if(locate==1||locate==3)
 		{

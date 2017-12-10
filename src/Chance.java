@@ -5,13 +5,16 @@ import javax.swing.JFrame;
 @SuppressWarnings("serial")
 public class Chance extends JFrame{
 	private ImageChance imagechance;
-	public Chance() {
-		
+	/**
+	 * Change
+	 * @return 	data change and paint again
+	 */
+	public Chance() {	
 		repaint();
 	}
 	/**
 	 * Change
-	 * @param   data was put 
+	 * @param   b : value input 
 	 * @return 	data change
 	 */
 	public void change(int b) {
@@ -24,8 +27,8 @@ public class Chance extends JFrame{
 	}
 	/**
 	 * compute the random number
-	 * @param   min value minimum 
-	 * @param   max value minimum
+	 * @param   min : value minimum 
+	 * @param   max : value minimum
 	 * @return 	random number from minimum to minimum
 	 */
 	private static int rand(int min, int max) {

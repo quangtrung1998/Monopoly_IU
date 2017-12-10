@@ -6,21 +6,29 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class CameraShowComputer extends JPanel implements Image{
 	private static int changeimage;
+	/**
+	 * Change
+	 * @return 	data change and paint again
+	 */
 	public CameraShowComputer() {
 		repaint();
 	}
 	/**
 	 * Change
-	 * @param   data was put 
+	 * @param   changeimage : value input 
 	 * @return 	data change
 	 */
 	public void change(int changeimage) {
-		
 		CameraShowComputer.changeimage=changeimage;
 	}
 	/**
 	 * 	Draw Image
-	 * @param 	Graphics g , address image, location horizontal , location vertical , width , height 
+	 * @param 	g : Graphics g
+	 * @param 	path : address image
+	 * @param 	x : location horizontal 
+	 * @param	y : location vertical 
+	 * @param	width : value of width
+	 * @param	height : value of height
 	 * @return 	show the image in the frame
 	 */
 	@Override

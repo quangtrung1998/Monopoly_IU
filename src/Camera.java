@@ -4,12 +4,16 @@ import javax.swing.JFrame;
 @SuppressWarnings("serial")
 public class Camera extends JFrame implements ShowCamera{
 	private CameraShow camerashow;
-	public Camera() {
+	/**
+	 * 	Paint again
+	 * @return 	clear table and paint again
+	 */
+	public Camera() {	
 			repaint();
 		}
 		/**
 		 * Change
-		 * @param   data was put 
+		 * @param   data : value input 
 		 * @return 	the change of camera show and paint again
 		 */
 	@Override

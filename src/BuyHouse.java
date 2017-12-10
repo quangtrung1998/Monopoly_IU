@@ -4,15 +4,26 @@ import javax.swing.JOptionPane;
 
 public class BuyHouse extends Place{ //HouseOperation
 	private static int[][] buy= new int[4][1000];
+	private static MainGame game;
+	private static String[] list = {"It was bought you must pay ","$","NOTIFICATION","Pay","Bankrupt","Yes, please","No, thanks","Would you like to buy it?","Buy 1 house","Buy 2 houses","Buy 3 houses","Buy Later",
+			"Buy a villa ","Do you want to update your house","How many houses you want to buy"}; 
+	/**
+	 * get value buy[][]
+	 * @return value buy[][]
+	 * 
+	 */
 	public static int[][] getBuy() {
 		return buy;
 	}
+	/**
+	 * Set value buy[][]
+	 * @param 	int[][] buy : value for setting
+	 * @return 	change value of buy[][]
+	 *
+	 */
 	public static void setBuy(int[][] buy) {
 		BuyHouse.buy = buy;
 	}
-	private static MainGame game;
-	private static final String[] list = {"It was bought you must pay ","$","NOTIFICATION","Pay","Bankrupt","Yes, please","No, thanks","Would you like to buy it?","Buy 1 house","Buy 2 houses","Buy 3 houses","Buy Later",
-			"Buy a villa ","Do you want to update your house","How many houses you want to buy"}; 
 	/**
 	 * Buy place and build house
 	 * @param 	a : location of player

@@ -10,7 +10,7 @@ public class Test {
 	}
 	/**
 	 * set value 
-	 * @param input value
+	 * @param a : value input
 	 * @return 	change value 
 	 */
 	public static void setA(int a) {

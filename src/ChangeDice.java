@@ -7,8 +7,8 @@ public class ChangeDice {
 	private static int diceright;
 	/**
 	 * compute the random number
-	 * @param   min value minimum 
-	 * @param   max value minimum
+	 * @param   min : value minimum 
+	 * @param   max : value minimum
 	 * @return 	random number from minimum to minimum
 	 */
 	private static int rand(int min, int max) {
@@ -30,7 +30,7 @@ public class ChangeDice {
 	}
 	/**
 	 * set value diceleft
-	 * @param   diceleft was given
+	 * @param   diceleft : value input
 	 * @return 	change value of diceleft
 	 */
 	public static void setDiceleft(int diceleft) {
@@ -48,7 +48,7 @@ public class ChangeDice {
 	}
 	/**
 	 * set value diceright
-	 * @param   diceright was given
+	 * @param   diceright : value input
 	 * @return 	change value of diceright
 	 */
 	public static void setDiceright(int c) {

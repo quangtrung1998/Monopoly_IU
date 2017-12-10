@@ -3,8 +3,12 @@ import javax.swing.JFrame;
 @SuppressWarnings("serial")
 public class CameraComputer extends JFrame implements ShowCamera{
 	private CameraShowComputer camerashowcomputer;
+	/**
+	 * 	Paint again
+	 * @param 	
+	 * @return 	clear table and paint again
+	 */
 		public CameraComputer() {
-			
 			repaint();
 		}
 		/**

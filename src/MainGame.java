@@ -91,11 +91,11 @@ public class MainGame extends JFrame {
 	/**
 	 * 	money of player
 	 */
-	private static int inialmoney1 = 1500;
+	private static int inialmoney1 ;
 	/**
 	 * 	money of computer
 	 */
-	private static int inialmoney2 = 1500;
+	private static int inialmoney2 ;
 	private static boolean conditionMove ;
 	private static DefaultComboBoxModel<Object> mode;
 	private static JComboBox<Object> comboBox;

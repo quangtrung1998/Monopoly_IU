@@ -3,7 +3,7 @@
 public interface ShowCamera {
 	/**
 	 * Change
-	 * @param   data was put 
+	 * @param   data : value input 
 	 * @return 	the change of camera show and paint again
 	 */
 	public void change(int data);
