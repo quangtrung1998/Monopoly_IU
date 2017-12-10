@@ -276,14 +276,14 @@ public class MainGame extends JFrame {
 	* @return 	change location player and repaint
 	*/
 	private void move() {
-		s.move();
+		s.movePlayer();
 	}
 	/**
 	* 	Move computer
 	* @return 	change location computer and repaint
 	*/
 	private void move1() {
-		s.move1();
+		s.moveComputer();
 	}
 	public static void run() throws InterruptedException {
 		MainGame game = new MainGame();
@@ -329,19 +329,19 @@ public class MainGame extends JFrame {
 				{
 					setConditionMove(true);
 					cameradice.setVisible(true);
-					for (int i = 0; i<10; i++) {
+					for (int i = 0; i<1000; i++) {
 						ChangeDice.setDiceleft(2);
 						ChangeDice.setDiceright(2);
 						cameradice.change(2);
 						game.repaint();
-						Thread.sleep(200);
+						Thread.sleep(2);
 					}
 					ChangeDice.setDiceleft(2);
 					ChangeDice.setDiceright(2);
 					sum = ChangeDice.getDiceleft() + ChangeDice.getDiceright();
 					cameradice.change(2);
 					game.repaint();
-					Thread.sleep(200);
+					Thread.sleep(3000);
 					cameradice.setVisible(false);
 				}
 				while (sum != 0)
@@ -411,19 +411,19 @@ public class MainGame extends JFrame {
 				sum = 0;
 				setConditionMove(false);
 				cameradice.setVisible(true);
-				for (int i = 0; i<10; i++) {
+				for (int i = 0; i<1000; i++) {
 					ChangeDice.setDiceleft(2);
 					ChangeDice.setDiceright(2);
 					cameradice.change(2);
 					game.repaint();
-					Thread.sleep(200);
+					Thread.sleep(2);
 				}
 				ChangeDice.setDiceleft(2);
 				ChangeDice.setDiceright(2);
 				sum = ChangeDice.getDiceleft() + ChangeDice.getDiceright();
 				cameradice.change(2);
 				game.repaint();
-				Thread.sleep(3);
+				Thread.sleep(3000);
 				cameradice.setVisible(false);
 				if (sum != 0)
 					setConditionMove(true);

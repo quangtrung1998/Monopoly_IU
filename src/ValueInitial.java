@@ -21,8 +21,7 @@ public class ValueInitial {
 		Surface.setYa(1); 
 		Surface.setXcomputer(871);
 		Surface.setYcomputer(590);
-		Surface.setYa1(1); 
-		
+		Surface.setYa1(1); 		
 		for(int i=1;i<=2;i++)
 		{
 			for(int j=0;j<=40;j++)

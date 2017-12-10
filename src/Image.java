@@ -1,5 +1,6 @@
 import java.awt.Graphics;
 public interface Image {
+//	Interface chỉ ra đời vì lý do trong Java ko được thừa kế nhiều lớp. còn implements thì thoải mái. 
 	/**
 	 * Change
 	 * @param   data was put 

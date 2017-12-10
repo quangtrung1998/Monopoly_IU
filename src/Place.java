@@ -3,7 +3,8 @@
 import java.awt.Color;
 
 public class Place {
-	private static int locate,priceini;
+	private static int locate;
+	private static int priceini;
 	private static int price1;
 	private static int price2;
 	private static int price3;
@@ -64,7 +65,7 @@ public class Place {
 	 * @return 	Color,priceini,price1,price2,price3,villa color,initial price,price when you buy 1 house,price when you buy 2
 	  house,price when you buy 3 house,price when you buy villa of place 
 	 */
-	public void work()
+	public synchronized void work()
 	{
 		if(locate==1||locate==3)
 		{

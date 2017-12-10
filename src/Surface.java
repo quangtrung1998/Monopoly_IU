@@ -45,7 +45,7 @@ class Surface extends JPanel {
 	 * Change the location of vertical and horizontal of player in the board
 	 * @return 	Change the location of vertical and horizontal
 	 */
-	public void move() {
+	public void movePlayer() {
 		if(yplayer==590&&xplayer>385)
 		{
 		xplayer-=54;//a*9/200
@@ -86,7 +86,7 @@ class Surface extends JPanel {
 	 * Change the location of vertical and horizontal of computer in the board
 	 * @return 	Change the location of vertical and horizontal
 	 */
-	public void move1() {
+	public void moveComputer() {
 		if(ycomputer==590&&xcomputer>385)
 		{
 			xcomputer-=54;

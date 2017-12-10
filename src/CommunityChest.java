@@ -32,8 +32,7 @@ public class CommunityChest extends JFrame{
         try {
             Random rn = new Random();
             int range = max - min + 1;
-            int randomNum = min + rn.nextInt(range);
-            return randomNum;
+            return min + rn.nextInt(range);
         } catch (Exception e) {
             e.printStackTrace();
             return -1;
