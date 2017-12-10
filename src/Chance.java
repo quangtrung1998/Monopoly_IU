@@ -3,7 +3,7 @@ import java.util.Random;
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
-public class Chance extends JFrame{
+public class Chance extends JFrame implements ShowCamera{
 	private ImageChance imagechance;
 	/**
 	 * Change
@@ -17,6 +17,7 @@ public class Chance extends JFrame{
 	 * @param   b : value input 
 	 * @return 	data change
 	 */
+	@Override
 	public void change(int b) {
 		if(b!=0)
 		{int a = rand(41,56);
@@ -45,6 +46,7 @@ public class Chance extends JFrame{
 	 * Show the frame and image in the frame
 	 * @return 	the frame and image in the frame
 	 */
+	@Override
 	public void shown() {
 	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Chỉ đóng frame đó, các frame khác liên quan sẽ không bị đóng.

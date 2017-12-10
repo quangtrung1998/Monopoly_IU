@@ -3,7 +3,7 @@ import java.util.Random;
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
-public class CommunityChest extends JFrame{
+public class CommunityChest extends JFrame implements ShowCamera{
 	ImageCommunityChest imagecommunitychest;
 	/**
 	 * Change
@@ -17,6 +17,7 @@ public class CommunityChest extends JFrame{
 	 * @param   b : value input 
 	 * @return 	data change
 	 */
+	@Override
 	public void change(int b) {
 		if(b!=0)
 		{int a = rand(57,71);
@@ -45,6 +46,7 @@ public class CommunityChest extends JFrame{
 	 * Show the frame and image in the frame
 	 * @return 	the frame and image in the frame
 	 */
+	@Override
 	public void shown() {
 	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Chỉ đóng frame đó, các frame khác liên quan sẽ không bị đóng.

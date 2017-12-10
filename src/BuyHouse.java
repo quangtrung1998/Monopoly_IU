@@ -106,7 +106,7 @@ public class BuyHouse extends Place{ //HouseOperation
 					 if(n==JOptionPane.YES_OPTION)
 					 {
 							MainGame.setInialmoney2(MainGame.getInialmoney2()+Place.getPrice1());
-							MainGame.setInialmoney1(MainGame.getInialmoney2()-Place.getPrice1());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
 					 }
 					 else if(n==JOptionPane.NO_OPTION)
 					 {
@@ -122,8 +122,8 @@ public class BuyHouse extends Place{ //HouseOperation
 					 }
 					 else if(MainGame.getInialmoney2()<Place.getPrice1())
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
-							MainGame.setInialmoney1(0);
+							MainGame.setInialmoney2(0);
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice1());
 					 }
 				 }
 			 }
@@ -150,8 +150,8 @@ public class BuyHouse extends Place{ //HouseOperation
 					 }
 					 else if(MainGame.getInialmoney2()<Place.getPrice1())
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice2());
-							MainGame.setInialmoney1(0);
+							MainGame.setInialmoney2(0);
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice2());
 					 }
 				 }
 			 }
@@ -178,8 +178,8 @@ public class BuyHouse extends Place{ //HouseOperation
 					 }
 					 else if(MainGame.getInialmoney2()<Place.getPrice1())
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice3());
-							MainGame.setInialmoney1(0);
+							MainGame.setInialmoney2(0);
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice3());
 					 }
 				 }
 			 }
@@ -210,15 +210,15 @@ public class BuyHouse extends Place{ //HouseOperation
 					 					MainGame.getMode().addElement(a);
 					 				else // neu khac 1 
 					 				{
-					 					for(int i=1;i<MainGame.getMode().getSize();i++) {
+					 					for(int i=1;i<=MainGame.getMode().getSize();i++) {
 					 						checkcombo = (int) MainGame.getMode().getElementAt(i); // lay gia tri mode tai vi tri i va ep kieu int
-					 						if(a==checkcombo) // neu a == checkcombo co nghĩa đã tồn tài thi thoat khỏi loop khong làm gì them
-					 							break;
 					 						if(a>checkcombo) // nếu gia tri a lon hon thi insert a tai vi tri i
 					 							{
 					 								MainGame.getMode().insertElementAt(a, i);
 					 								break;
 					 							}
+					 						else if(i==MainGame.getMode().getSize())
+					 							MainGame.getMode().addElement(a);
 					 					}
 					 				}
 					 			
@@ -233,8 +233,7 @@ public class BuyHouse extends Place{ //HouseOperation
 						 				{
 						 					for(int i=1;i<MainGame.getMode().getSize();i++) {
 						 						checkcombo = (int) MainGame.getMode().getElementAt(i);
-						 						if(a==checkcombo)
-						 							break;
+						 				
 						 						if(a>checkcombo)
 						 							{
 						 								MainGame.getMode().insertElementAt(a, i);
@@ -254,8 +253,7 @@ public class BuyHouse extends Place{ //HouseOperation
 						 				{
 						 					for(int i=1;i<MainGame.getMode().getSize();i++) {
 						 						checkcombo = (int) MainGame.getMode().getElementAt(i);
-						 						if(a==checkcombo)
-						 							break;
+						 						
 						 						if(a>checkcombo)
 						 							{
 						 								MainGame.getMode().insertElementAt(a, i);
