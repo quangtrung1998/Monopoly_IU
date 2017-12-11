@@ -20,11 +20,15 @@ public class Chance extends JFrame implements ShowCamera{
 	@Override
 	public void change(int b) {
 		if(b!=0)
-		{int a = rand(41,56);
-		imagechance.change(a);}
+		{
+			int a = rand(41,56);
+			imagechance.change(a);
+		}
 		else
-		{imagechance.change(7);
-		repaint();}
+		{
+			imagechance.change(7);
+			repaint();
+		}
 	}
 	/**
 	 * compute the random number

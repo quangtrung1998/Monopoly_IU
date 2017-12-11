@@ -8,9 +8,10 @@ import javax.swing.JFrame;
 public class MenuGame  extends JFrame implements ShowCamera{
 	private static JButton btnDice;
 	private static JButton btnDice1;
+	private static BackgroundMenugame backgroundmenugame;
 		public static JButton getBtnDice() {
 		return btnDice;
-	}
+		}
 		public static JButton getBtnDice1() {
 			return btnDice1;
 		}
@@ -31,7 +32,7 @@ public class MenuGame  extends JFrame implements ShowCamera{
 			btnDice1.setBounds(280, 580, 235, 58);
 			add(btnDice);
 			add(btnDice1);
-			BackgroundMenugame backgroundmenugame = new BackgroundMenugame();
+			backgroundmenugame = new BackgroundMenugame();
 			add(backgroundmenugame);
 			setVisible(true);
 		}

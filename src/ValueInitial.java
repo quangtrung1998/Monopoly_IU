@@ -6,6 +6,7 @@ public class ValueInitial {
 	 * save and create the initial value
 	 * @return 	take and active this value
 	 */
+	@SuppressWarnings("static-access")
 	public static void getValue(){
 		game.setInialmoney1(1500); // set tiền của mình
 		game.setInialmoney2(1500); // set tiền của máy
@@ -19,10 +20,8 @@ public class ValueInitial {
 		surface.setYplayer(590);
 		surface.setXa(1); 
 		surface.setXa1(1); 
-		surface.setYa(1); 
 		surface.setXcomputer(871);
 		surface.setYcomputer(590);
-		surface.setYa1(1); 		
 		for(int i=1;i<=2;i++)
 		{
 			for(int j=0;j<=40;j++)

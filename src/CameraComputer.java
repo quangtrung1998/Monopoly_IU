@@ -29,11 +29,11 @@ public class CameraComputer extends JFrame implements ShowCamera{
 		public void shown(){
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(800, 343, 340, 342);
-			setResizable(false);
+			setResizable(false);// Đặt JFrame có được thay đổi kích thước hay không
 			setTitle("COMPUTER");
 			camerashowcomputer = new CameraShowComputer();
 			add(camerashowcomputer);
-			setVisible(false);
+			setVisible(false);//Đặt JFrame ẩn/hiện
 		}
 }
 

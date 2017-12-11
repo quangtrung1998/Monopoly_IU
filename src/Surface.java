@@ -11,7 +11,6 @@ public class Surface extends JPanel {
 	private static int yplayer = 590;
 	private static int xa = 1;
 	private static int xa1=1;
-	private static int ya = 1;
 	private static int xcomputer=871;
 	private static int ycomputer=590;
 	public static void setXplayer(int xplayer) {
@@ -26,19 +25,12 @@ public class Surface extends JPanel {
 	public static void setXa1(int xa1) {
 		Surface.xa1 = xa1;
 	}
-	public static void setYa(int ya) {
-		Surface.ya = ya;
-	}
 	public static void setXcomputer(int xcomputer) {
 		Surface.xcomputer = xcomputer;
 	}
 	public static void setYcomputer(int ycomputer) {
 		Surface.ycomputer = ycomputer;
 	}
-	public static void setYa1(int ya1) {
-		Surface.ya1 = ya1;
-	}
-	private static int ya1=1;
 	/**
 	 * Change the location of vertical and horizontal of player in the board
 	 * @return 	Change the location of vertical and horizontal
@@ -137,22 +129,7 @@ public class Surface extends JPanel {
     	g.drawImage(new ImageIcon("board.jpg").getImage(),300, 0,1200*11/20,660,null);
     	g.drawImage(new ImageIcon("car"+xa1+".png").getImage(), xplayer, yplayer, 60,60,null);
     	g.drawImage(new ImageIcon("xe"+xa+".png").getImage(), xcomputer, ycomputer, 50,50,null);
-    	ya=ChangeDice.getDiceleft()+ChangeDice.getDiceright();
-    	ya1=ChangeDice.getDiceleft()+ChangeDice.getDiceright();
     }
-	/**
-	 * get value location of player
-	 * @return 	take value location of player
-	 */
-	public static int getYa() {
-		return ya;
-	}
-	/**
-	 * get value location of computer
-	 * @return 	take value location of computer
-	 */
-	public static int getYa1() {
-		return ya1;
-	}
+	
  
 }

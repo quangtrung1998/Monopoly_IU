@@ -20,11 +20,14 @@ public class CommunityChest extends JFrame implements ShowCamera{
 	@Override
 	public void change(int b) {
 		if(b!=0)
-		{int a = rand(57,71);
-		imagecommunitychest.change(a);}
+		{
+			int a = rand(57,71);
+			imagecommunitychest.change(a);}
 		else
-		{imagecommunitychest.change(33);
-		repaint();}
+		{
+			imagecommunitychest.change(33);
+			repaint();
+		}
 	}
 	/**
 	 * compute the random number

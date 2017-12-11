@@ -204,7 +204,7 @@ public class MainGame extends JFrame {
 		add(s);
 		setVisible(true);
 	}
-	public static boolean isConditionMove() {
+	private static boolean isConditionMove() {
 		return conditionMove;
 	}
 	/**
@@ -212,7 +212,7 @@ public class MainGame extends JFrame {
 	 * @param conditionMove : value input
 	 * @return 	change the value of conditionmove
 	 */
-	public static void setConditionMove(boolean conditionMove) {
+	private static void setConditionMove(boolean conditionMove) {
 		MainGame.conditionMove = conditionMove;
 	}
 	public static DefaultComboBoxModel<Object> getMode() {
@@ -330,7 +330,8 @@ public class MainGame extends JFrame {
 	 * @param a : locate of player or computer
 	 * @return 	change the value 
 	 */
-	public void house(int a)
+	@SuppressWarnings("static-access")
+	private void house(int a)
 	{
 		place = new Place();
 		place.setLocate(a);
@@ -338,28 +339,28 @@ public class MainGame extends JFrame {
 		Color col = place.getColor();
 		namePrice.setBackground(col);
 		if (a == 5 || a == 15 || a == 25 || a == 35) {
-			int pr = Place.getPriceini();
+			int pr = place.getPriceini();
 			priceini.setText(INITIALPRICE + pr);
-			int pr1 = Place.getPrice1();
+			int pr1 = place.getPrice1();
 			price1.setText(1 + STRINGPRICE2 + pr1);
-			int pr2 = Place.getPrice2();
+			int pr2 = place.getPrice2();
 			price2.setText(2 + STRINGPRICE2 + pr2);
-			int pr3 = Place.getPrice3();
+			int pr3 = place.getPrice3();
 			price3.setText(3 + STRINGPRICE2 + pr3);
-			int vil = Place.getVilla();
+			int vil = place.getVilla();
 			villa.setText(4 + STRINGPRICE2 + vil);
 		}
 		else
 		{
-			int pr = Place.getPriceini();
+			int pr = place.getPriceini();
 			priceini.setText(INITIALPRICE + pr);
-			int pr1 = Place.getPrice1();
+			int pr1 = place.getPrice1();
 			price1.setText(1 + STRINGPRICE1 + pr1);
-			int pr2 = Place.getPrice2();
+			int pr2 = place.getPrice2();
 			price2.setText(2 + STRINGPRICE1 + pr2);
-			int pr3 = Place.getPrice3();
+			int pr3 = place.getPrice3();
 			price3.setText(3 + STRINGPRICE1 + pr3);
-			int vil = Place.getVilla();
+			int vil = place.getVilla();
 			villa.setText(STRINGPRICE3 + vil);
 		}
 	}
@@ -368,7 +369,8 @@ public class MainGame extends JFrame {
 	 * @param a : locate of player or computer
 	 * @return 	change the value 
 	 */
-	public void houseBought(int a)
+	@SuppressWarnings("static-access")
+	private void houseBought(int a)
 	{
 		place = new Place();
 		place.setLocate(a);
@@ -376,28 +378,28 @@ public class MainGame extends JFrame {
 		Color col1 = place.getColor();
 		namePrice1.setBackground(col1);
 		if (a == 5 || a == 15 || a == 25 || a == 35) {
-			int pr1 = Place.getPriceini();
+			int pr1 = place.getPriceini();
 			priceini1.setText(INITIALPRICE + pr1);
-			int pr11 = Place.getPrice1();
+			int pr11 = place.getPrice1();
 			price11.setText(1 + STRINGPRICE2 + pr11);
-			int pr21 = Place.getPrice2();
+			int pr21 = place.getPrice2();
 			price21.setText(2 + STRINGPRICE2 + pr21);
-			int pr31 = Place.getPrice3();
+			int pr31 = place.getPrice3();
 			price31.setText(3 + STRINGPRICE2 + pr31);
-			int vil1 = Place.getVilla();
+			int vil1 = place.getVilla();
 			villa1.setText(4 + STRINGPRICE2 + vil1);
 		}
 		else
 		{
-			int pr1 = Place.getPriceini();
+			int pr1 = place.getPriceini();
 			priceini1.setText(INITIALPRICE + pr1);
-			int pr11 = Place.getPrice1();
+			int pr11 = place.getPrice1();
 			price11.setText(1 + STRINGPRICE1 + pr11);
-			int pr21 = Place.getPrice2();
+			int pr21 = place.getPrice2();
 			price21.setText(2 + STRINGPRICE1 + pr21);
-			int pr31 = Place.getPrice3();
+			int pr31 = place.getPrice3();
 			price31.setText(3 + STRINGPRICE1 + pr31);
-			int vil1 = Place.getVilla();
+			int vil1 = place.getVilla();
 			villa1.setText(STRINGPRICE3 + vil1);
 		}
 	}
@@ -414,6 +416,94 @@ public class MainGame extends JFrame {
 	*/
 	private void move1() {
 		s.moveComputer();
+	}
+	private static void workPlayer() throws InterruptedException {
+		if (isConditionMove()==true) {
+			if (locationPlayer >= 40)
+			{
+				locationPlayer -= 40;
+				inialmoney1 += 200;
+			}
+			else if (locationPlayer == 7 || locationPlayer == 22 || locationPlayer == 36) {
+
+				chance.change(1);
+				chance.setVisible(true);
+				game.repaint();
+				Thread.sleep(200);
+				chance.setVisible(false);
+			}
+			else if (locationPlayer == 2 || locationPlayer == 17 || locationPlayer == 33) {
+				communitychest.change(1);
+				communitychest.setVisible(true);
+				game.repaint();
+				Thread.sleep(5000);
+				communitychest.setVisible(false);
+			}
+			else if (locationPlayer == 30)
+			{
+				JOptionPane.showMessageDialog(game, "You have to go to jail");
+				sum = 20;
+				while (sum != 0)
+				{
+					locationPlayer++;
+					game.move();
+					camera.change(locationPlayer);
+					game.repaint();
+					Thread.sleep(200);
+					sum--;
+				}
+				locationPlayer = 10;
+				prision1 = 3;
+			}
+			game.house(locationPlayer);
+			BuyHouse.house(locationPlayer, 1);
+			System.out.println(locationPlayer);
+			System.out.println(inialmoney1);
+		}
+	}
+	private static void workComputer() throws InterruptedException{
+		if (isConditionMove()==true) {
+			if (locationComputer >= 40)
+			{
+				locationComputer -= 40;
+				inialmoney2 += 200;
+			}
+			else if (locationComputer == 7 || locationComputer == 22 || locationComputer == 36) {
+				game.house(locationComputer);
+				chance.change(1);
+				chance.setVisible(true);
+				game.repaint();
+				Thread.sleep(5000);
+				chance.setVisible(false);
+			}
+			else if (locationComputer == 2 || locationComputer == 17 || locationComputer == 33) {
+				communitychest.change(1);
+				communitychest.setVisible(true);
+				game.repaint();
+				Thread.sleep(200);
+				communitychest.setVisible(false);
+			}
+			else if (locationComputer == 30)
+			{
+				JOptionPane.showMessageDialog(game, "You have to go to jail");
+				sum = 20;
+				while (sum != 0)
+				{
+					locationComputer++;
+					game.move1();
+					cameracomputer.change(locationComputer);
+					game.repaint();
+					Thread.sleep(200);
+					sum--;
+				}
+				locationComputer = 10;
+				prision2 = 3;
+			}
+			game.house(locationComputer);
+			BuyHouse.house(locationComputer, 2);
+			System.out.println(locationComputer);
+			System.out.println(inialmoney2);
+		}
 	}
 	public static void run() throws InterruptedException {
 		game = new MainGame();
@@ -451,7 +541,6 @@ public class MainGame extends JFrame {
 					else {
 						int a = (int)comboBox.getSelectedItem();
 						game.houseBought(a);
-
 					}
 				}
 				});
@@ -492,48 +581,7 @@ public class MainGame extends JFrame {
 				}
 				chance.change(0);
 				communitychest.change(0);
-				if (isConditionMove()==true) {
-					if (locationPlayer >= 40)
-					{
-						locationPlayer -= 40;
-						inialmoney1 += 200;
-					}
-					else if (locationPlayer == 7 || locationPlayer == 22 || locationPlayer == 36) {
-
-						chance.change(1);
-						chance.setVisible(true);
-						game.repaint();
-						Thread.sleep(200);
-						chance.setVisible(false);
-					}
-					else if (locationPlayer == 2 || locationPlayer == 17 || locationPlayer == 33) {
-						communitychest.change(1);
-						communitychest.setVisible(true);
-						game.repaint();
-						Thread.sleep(5000);
-						communitychest.setVisible(false);
-					}
-					else if (locationPlayer == 30)
-					{
-						JOptionPane.showMessageDialog(game, "You have to go to jail");
-						sum = 20;
-						while (sum != 0)
-						{
-							locationPlayer++;
-							game.move();
-							camera.change(locationPlayer);
-							game.repaint();
-							Thread.sleep(200);
-							sum--;
-						}
-						locationPlayer = 10;
-						prision1 = 3;
-					}
-					game.house(locationPlayer);
-					BuyHouse.house(locationPlayer, 1);
-					System.out.println(locationPlayer);
-					System.out.println(inialmoney1);
-				}
+				workPlayer();
 				camera.setVisible(false);
 			}
 			else if (player1 == 2 && prision2 == 0)
@@ -575,48 +623,7 @@ public class MainGame extends JFrame {
 				}
 				chance.change(0);
 				communitychest.change(0);
-				if (isConditionMove()==true) {
-					if (locationComputer >= 40)
-					{
-						locationComputer -= 40;
-						inialmoney2 += 200;
-					}
-					else if (locationComputer == 7 || locationComputer == 22 || locationComputer == 36) {
-						game.house(locationComputer);
-						chance.change(1);
-						chance.setVisible(true);
-						game.repaint();
-						Thread.sleep(5000);
-						chance.setVisible(false);
-					}
-					else if (locationComputer == 2 || locationComputer == 17 || locationComputer == 33) {
-						communitychest.change(1);
-						communitychest.setVisible(true);
-						game.repaint();
-						Thread.sleep(200);
-						communitychest.setVisible(false);
-					}
-					else if (locationComputer == 30)
-					{
-						JOptionPane.showMessageDialog(game, "You have to go to jail");
-						sum = 20;
-						while (sum != 0)
-						{
-							locationComputer++;
-							game.move1();
-							cameracomputer.change(locationComputer);
-							game.repaint();
-							Thread.sleep(200);
-							sum--;
-						}
-						locationComputer = 10;
-						prision2 = 3;
-					}
-					game.house(locationComputer);
-					BuyHouse.house(locationComputer, 2);
-					System.out.println(locationComputer);
-					System.out.println(inialmoney2);
-				}
+				workComputer();
 				player1 = 1;
 				cameracomputer.setVisible(false);
 			}

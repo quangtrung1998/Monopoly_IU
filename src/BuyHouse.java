@@ -24,6 +24,24 @@ public class BuyHouse extends Place{ //HouseOperation
 	public static void setBuy(int[][] buy) {
 		BuyHouse.buy = buy;
 	}
+	private static void addElementToMode(int element) {
+		int checkcombo;
+		if(MainGame.getMode().getSize()==1) // kiem tra xem mode cua DefaultComboBoxModel co size == 1 k có thi add vi tri a vao mode
+				MainGame.getMode().addElement(element); // Thêm phần tử đã cho tới cuối của Vector này, tăng kích cỡ nó thêm 1
+			else // neu khac 1 
+			{
+				for(int i=1;i<MainGame.getMode().getSize();i++) {
+					checkcombo = (int) MainGame.getMode().getElementAt(i); // lay gia tri mode tai vi tri i va ep kieu int
+					if(element>checkcombo) // nếu gia tri a lon hon thi insert a tai vi tri i
+						{
+							MainGame.getMode().insertElementAt(element, i); // Chèn đối tượng đã cho như là một phần tử vào Vector này tại index đã cho
+							break;
+						}
+					else if(i==MainGame.getMode().getSize()-1)
+						MainGame.getMode().addElement(element); 
+				}
+			}
+	}
 	/**
 	 * Buy place and build house
 	 * @param 	a : location of player
@@ -43,7 +61,7 @@ public class BuyHouse extends Place{ //HouseOperation
 				
 		 }
 		 else if(a==5||a==15||a==25||a==35) { // mua bến xe tại 4 vi trí có bến xe
-			 int checkcombo;
+			 
 			 if(player==1) {
 				if(buy[1][a]==0) {
 					 Object[] options = {list[5],list[6]};
@@ -52,21 +70,7 @@ public class BuyHouse extends Place{ //HouseOperation
 						 {
 						 	MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPriceini()); // set lai gia trị tiền của người chơi
 						 	buy[1][a]=1;
-						 	if(MainGame.getMode().getSize()==1) // kiem tra xem mode cua DefaultComboBoxModel co size == 1 k có thi add vi tri a vao mode
-			 					MainGame.getMode().addElement(a); // Thêm phần tử đã cho tới cuối của Vector này, tăng kích cỡ nó thêm 1
-			 				else // neu khac 1 
-			 				{
-			 					for(int i=1;i<MainGame.getMode().getSize();i++) {
-			 						checkcombo = (int) MainGame.getMode().getElementAt(i); // lay gia tri mode tai vi tri i va ep kieu int
-			 						if(a>checkcombo) // nếu gia tri a lon hon thi insert a tai vi tri i
-			 							{
-			 								MainGame.getMode().insertElementAt(a, i); // Chèn đối tượng đã cho như là một phần tử vào Vector này tại index đã cho
-			 								break;
-			 							}
-			 						else if(i==MainGame.getMode().getSize()-1)
-			 							MainGame.getMode().addElement(a); 
-			 					}
-			 				}
+						 	addElementToMode(a);
 						 }
 		 				
 				}
@@ -216,73 +220,28 @@ public class BuyHouse extends Place{ //HouseOperation
 				 {
 					
 					 	Object[] options1 = {list[8],list[9],list[10]}; // mua 1 nha 2 nhà 3 nhà 
-					 	int checkcombo =0;
+					 	
 					 
 					 	int n1 = JOptionPane.showOptionDialog(game,list[14],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options1,options1[2]);
 					 	if(n1==JOptionPane.YES_OPTION) // mua 1 nha
 					 		{
 					 			buy[player][a]=1;
 					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
-					 				if(MainGame.getMode().getSize()==1) // kiem tra xem mode cua DefaultComboBoxModel co size == 1 k có thi add vi tri a vao mode
-					 					MainGame.getMode().addElement(a);
-					 				else // neu khac 1 
-					 				{
-					 					for(int i=1;i<MainGame.getMode().getSize();i++) {
-					 						checkcombo = (int) MainGame.getMode().getElementAt(i); // lay gia tri mode tai vi tri i va ep kieu int
-					 						if(a>checkcombo) // nếu gia tri a lon hon thi insert a tai vi tri i
-					 							{
-					 								MainGame.getMode().insertElementAt(a, i);
-					 								break;
-					 							}
-					 						else if(i==MainGame.getMode().getSize()-1)
-					 							MainGame.getMode().addElement(a);
-					 					}
-					 				}
+					 			addElementToMode(a);
 					 			
 					 		}
 					 	else if(n1==JOptionPane.NO_OPTION) // mua 2 nha
 					 		{
 					 			buy[player][a]=2;
 					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice2());
-					 					if(MainGame.getMode().getSize()==1)
-						 					MainGame.getMode().addElement(a);
-						 				else
-						 				{
-						 					for(int i=1;i<MainGame.getMode().getSize();i++) {
-						 						checkcombo = (int) MainGame.getMode().getElementAt(i);
-						 				
-						 						if(a>checkcombo)
-						 							{
-						 								MainGame.getMode().insertElementAt(a, i);
-						 								break;
-						 							}
-						 						else if(i==MainGame.getMode().getSize()-1)
-						 							MainGame.getMode().addElement(a);
-						 					}
-						 				}
+					 			addElementToMode(a);
 						 			
 					 		}
 					 	else if(n1==JOptionPane.CANCEL_OPTION) // mua 3 nha
 					 		{
 					 			buy[player][a]=3;
 					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice3());
-					 					if(MainGame.getMode().getSize()==1)
-						 					MainGame.getMode().addElement(a);
-						 				else
-						 				{
-						 					for(int i=1;i<MainGame.getMode().getSize();i++) {
-						 						checkcombo = (int) MainGame.getMode().getElementAt(i);
-						 						
-						 						if(a>checkcombo)
-						 							{
-						 								MainGame.getMode().insertElementAt(a, i);
-						 								break;
-						 							}
-						 						else if(i==MainGame.getMode().getSize()-1)
-						 							MainGame.getMode().addElement(a);
-						 					}
-						 				}
-						 			
+					 			addElementToMode(a);
 					 		}
 					 		 				 	
 				 }
