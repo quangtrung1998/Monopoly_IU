@@ -6,9 +6,7 @@ import javax.swing.ImageIcon;
 
 import javax.swing.JPanel;
 
-class Surface extends JPanel {
-
-	private static final long serialVersionUID = -5843034358426716656L;
+public class Surface extends JPanel {
 	private static int xplayer = 871;
 	private static int yplayer = 590;
 	private static int xa = 1;
@@ -123,7 +121,7 @@ class Surface extends JPanel {
 			xa=1;
 			}
 		}
-	public Surface(MainGame game) { // MainGame game có hay không không quan trọng cho lắm cần coi kĩ khúc này
+	public Surface() { // MainGame game có hay không không quan trọng cho lắm cần coi kĩ khúc này
 		repaint();// vẽ lại hình ảnh Nếu chỉ muốn vẽ lại 1 phần ta sử dụng phương thức:	repaint ( int x, int y,i nt width, int height )
 	}
 	/**

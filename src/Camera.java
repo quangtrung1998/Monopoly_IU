@@ -19,7 +19,7 @@ public class Camera extends JFrame implements ShowCamera{
 	@Override
 	public void change(int data) {
 		camerashow.change(data);
-		repaint();
+		repaint();// vẽ lại
 	}
 	/**
 	 * Show the frame and image in the frame

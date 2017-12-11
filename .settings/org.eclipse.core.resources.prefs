@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/BackgroundMenugame.java=UTF-8
 encoding//src/BuyHouse.java=UTF-8
 encoding//src/Camera.java=UTF-8
 encoding//src/CameraDice.java=UTF-8
@@ -8,3 +9,4 @@ encoding//src/Image.java=UTF-8
 encoding//src/MainGame.java=UTF-8
 encoding//src/MenuGame.java=UTF-8
 encoding//src/Surface.java=UTF-8
+encoding//src/ValueInitial.java=UTF-8

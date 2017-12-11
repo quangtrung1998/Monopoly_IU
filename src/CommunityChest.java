@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
 public class CommunityChest extends JFrame implements ShowCamera{
-	ImageCommunityChest imagecommunitychest;
+	private ImageCommunityChest imagecommunitychest;
 	/**
 	 * Change
 	 * @return 	data change and paint again

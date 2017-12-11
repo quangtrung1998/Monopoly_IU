@@ -105,6 +105,15 @@ public class MainGame extends JFrame {
 	private static final String STRINGPRICE2 = " Station : ";
 	private static final String STRINGPRICE3 = " Villa: ";
 	private static final String STRINGFONT = "Bradley Hand ITC";
+	private static BuyHouse buyhouse;
+	private static Camera camera;
+	private static CameraComputer cameracomputer;
+	private static Chance chance ;
+	private static CommunityChest communitychest;
+	private static Place place;
+	private static ChangeDice changedice;
+	private static CameraDice cameradice;
+	private static MainGame game;
 	/**
 	 * When call new create frame panel label picture in initial time
 	 * @return 	show in the gui
@@ -191,7 +200,7 @@ public class MainGame extends JFrame {
 		comboBox.setBounds(0, 0, 300, 40);
 		add(comboBox);
 		setLocationRelativeTo(null);
-		s = new Surface(this);
+		s = new Surface();
 		add(s);
 		setVisible(true);
 	}
@@ -323,7 +332,7 @@ public class MainGame extends JFrame {
 	 */
 	public void house(int a)
 	{
-		Place place = new Place();
+		place = new Place();
 		place.setLocate(a);
 		place.work();
 		Color col = place.getColor();
@@ -361,7 +370,7 @@ public class MainGame extends JFrame {
 	 */
 	public void houseBought(int a)
 	{
-		Place place = new Place();
+		place = new Place();
 		place.setLocate(a);
 		place.work();
 		Color col1 = place.getColor();
@@ -407,13 +416,12 @@ public class MainGame extends JFrame {
 		s.moveComputer();
 	}
 	public static void run() throws InterruptedException {
-		MainGame game = new MainGame();
-		CameraComputer cameracomputer = new CameraComputer();
-		Camera camera = new Camera();
-		Chance chance = new Chance();
-		CommunityChest communitychest = new CommunityChest();
-		CameraDice cameradice = new CameraDice();
-		Place place = new BuyHouse();
+		game = new MainGame();
+		cameracomputer = new CameraComputer();
+		camera = new Camera();
+		chance = new Chance();
+		communitychest = new CommunityChest();
+		cameradice = new CameraDice();
 		camera.shown();
 		cameracomputer.shown();
 		chance.shown();
@@ -522,7 +530,7 @@ public class MainGame extends JFrame {
 						prision1 = 3;
 					}
 					game.house(locationPlayer);
-					place.house(locationPlayer, 1);
+					BuyHouse.house(locationPlayer, 1);
 					System.out.println(locationPlayer);
 					System.out.println(inialmoney1);
 				}
@@ -629,7 +637,7 @@ public class MainGame extends JFrame {
 				player1 = 2;
 				Thread.sleep(200);
 			}
-			else if (prision2 != 0 && prision1 == 0)
+			else if (prision2 != 0 && prision1 == 0 &&sav!=0)
 			{
 				JOptionPane.showMessageDialog(game, "You has "+prision2+" turn to out prision");
 				prision2--;

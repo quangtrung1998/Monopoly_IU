@@ -6,6 +6,8 @@ public class Main {
 	private static MenuGame menugame ;
 	private static  ValueInitial valueinitial;
 	private static  MainGame maingame;
+	private static Test test;
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws InterruptedException  {
 		while(true) {
 			if(f==1) {
@@ -13,18 +15,27 @@ public class Main {
 				menugame.shown();
 				f++;
 			}
-			else if(Test.getA()==2)
-			{	valueinitial = new ValueInitial();
+			else if(test.getA()==2)
+			{	
 				valueinitial.getValue();
-				
 				maingame.run();
 				f=1;
-				Test.setA(1);
+				test.setA(1);
 			}
-			if(Test.getA()!=2) {
-				MenuGame.getBtnDice().addActionListener(new ActionListener() {
+			else if(test.getA()==3)
+			{
+				break;
+			}
+			if(test.getA()!=2) {
+				menugame.getBtnDice().addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {	
-						Test.setA(2);
+						test.setA(2);
+						menugame.dispose();
+				}
+			});
+				menugame.getBtnDice1().addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {	
+						test.setA(3);
 						menugame.dispose();
 				}
 			});

@@ -25,7 +25,7 @@ public class BackgroundMenugame extends JPanel implements Image{
 	 */
 	@Override
 	public void paint1(Graphics g,String path,int x,int y,int width,int height) { // create function to save time 
-		g.drawImage(new ImageIcon(path).getImage(),x, y,width,height,null);
+		g.drawImage(new ImageIcon(path).getImage(),x, y,width,height,null); // getImage() trả về giá trị của icon 
 	}
 	/**
 	 * 	Draw Image

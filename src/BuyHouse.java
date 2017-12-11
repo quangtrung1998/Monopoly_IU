@@ -3,9 +3,9 @@
 import javax.swing.JOptionPane;
 
 public class BuyHouse extends Place{ //HouseOperation
-	private static int[][] buy= new int[4][1000];
+	private static int[][] buy= new int[4][1000]; 
 	private static MainGame game;
-	private static String[] list = {"It was bought you must pay ","$","NOTIFICATION","Pay","Bankrupt","Yes, please","No, thanks","Would you like to buy it?","Buy 1 house","Buy 2 houses","Buy 3 houses","Buy Later",
+	private static final String[] list = {"It was bought you must pay ","$","NOTIFICATION","Pay","Bankrupt","Yes, please","No, thanks","Would you like to buy it?","Buy 1 house","Buy 2 houses","Buy 3 houses","Buy Later",
 			"Buy a villa ","Do you want to update your house","How many houses you want to buy"}; 
 	/**
 	 * get value buy[][]
@@ -42,53 +42,53 @@ public class BuyHouse extends Place{ //HouseOperation
 		 {
 				
 		 }
-		 else if(a==5||a==15||a==25||a==35) {
+		 else if(a==5||a==15||a==25||a==35) { // mua bến xe tại 4 vi trí có bến xe
 			 int checkcombo;
 			 if(player==1) {
 				if(buy[1][a]==0) {
 					 Object[] options = {list[5],list[6]};
 					 int n = JOptionPane.showOptionDialog(game,list[7],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
-					 if(n==JOptionPane.YES_OPTION)
+					 if(n==JOptionPane.YES_OPTION) // mua
 						 {
-						 	MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPriceini());
+						 	MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPriceini()); // set lai gia trị tiền của người chơi
 						 	buy[1][a]=1;
 						 	if(MainGame.getMode().getSize()==1) // kiem tra xem mode cua DefaultComboBoxModel co size == 1 k có thi add vi tri a vao mode
-			 					MainGame.getMode().addElement(a);
+			 					MainGame.getMode().addElement(a); // Thêm phần tử đã cho tới cuối của Vector này, tăng kích cỡ nó thêm 1
 			 				else // neu khac 1 
 			 				{
-			 					for(int i=1;i<=MainGame.getMode().getSize();i++) {
+			 					for(int i=1;i<MainGame.getMode().getSize();i++) {
 			 						checkcombo = (int) MainGame.getMode().getElementAt(i); // lay gia tri mode tai vi tri i va ep kieu int
 			 						if(a>checkcombo) // nếu gia tri a lon hon thi insert a tai vi tri i
 			 							{
-			 								MainGame.getMode().insertElementAt(a, i);
+			 								MainGame.getMode().insertElementAt(a, i); // Chèn đối tượng đã cho như là một phần tử vào Vector này tại index đã cho
 			 								break;
 			 							}
-			 						else if(i==MainGame.getMode().getSize())
+			 						else if(i==MainGame.getMode().getSize()-1)
 			 							MainGame.getMode().addElement(a); 
 			 					}
 			 				}
 						 }
 		 				
 				}
-				else {
+				else { // nếu mua rùi
 					int totalprice=0;
 					for(int i=5;i<=35;i+=10) {
-						if(buy[2][a]==2)
+						if(buy[2][a]==1)
 							totalprice++;
-					}
-					if(totalprice==1)
+					} // bước for kiểm tra xem thằng máy tính mua được mấy bên xe
+					if(totalprice==1) // mua dc một bến trừ tiền 1 bến 
 						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
-					else if(totalprice==2)
+					else if(totalprice==2)// 2 bến trừ tiền 2 bến 
 						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice2());
-					else if(totalprice==3)
+					else if(totalprice==3)// 3 bến trừ tiền 3 bến
 						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice3());
-					else if(totalprice==4)
+					else if(totalprice==4)// 4 bến trừ tiền 4 bến
 						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getVilla());
 				}
 			 }
-			 else if(player==2) {
-				 if(buy[2][a]==0) {
-					 if(MainGame.getInialmoney2()>Place.getPriceini()+200)
+			 else if(player==2) { // máy chơi
+				 if(buy[2][a]==0) {// nếu mình chưa mua máy sẽ kiểm tra xem mình đủ tiền mua không ?
+					 if(MainGame.getInialmoney2()>Place.getPriceini()+200) // đủ thì máy mua tư tưởng là lấy tiên hiện tại của minh so với giá đất +200
 						 {
 						 MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPriceini());
 						 	buy[2][a]=1;
@@ -97,7 +97,7 @@ public class BuyHouse extends Place{ //HouseOperation
 				else {
 					int totalprice=0;
 					for(int i=5;i<=35;i+=10) {
-						if(buy[1][a]==2)
+						if(buy[1][a]==1)
 							totalprice++;
 					}
 					if(totalprice==1)
@@ -111,7 +111,7 @@ public class BuyHouse extends Place{ //HouseOperation
 				}
 			 }
 		 }
-		 else if(buy[player][a]==0&&buy[check][a]!=0) // nếu tại vi trí này nhà đã bị mua , phải trả tiền
+		 else if(buy[player][a]==0&&buy[check][a]!=0) // nếu tại vi trí này nhà đã bị mua , phải trả tiền nếu player =1 thì check =2 1 là minh 2 là máy
 		 {
 			 Object[] options = {list[3],list[4]};
 			 if(buy[check][a]==1) // mua một nhà
@@ -137,16 +137,16 @@ public class BuyHouse extends Place{ //HouseOperation
 							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
 							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice1());
 					 }
-					 else if(MainGame.getInialmoney2()<Place.getPrice1())
+					 else if(MainGame.getInialmoney2()<Place.getPrice1()) // nếu k đủ tiền phá sản
 					 {
 							MainGame.setInialmoney2(0);
 							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice1());
 					 }
 				 }
 			 }
-			 else if(buy[check][a]==2)
+			 else if(buy[check][a]==2) // nếu đã mua được 2 căn
 			 {
-				 if(player==1) {
+				 if(player==1) { // nếu mình vô trừ tiền mình tăng tiền máy
 					 int n = JOptionPane.showOptionDialog(game,list[0]+Place.getPrice2()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 					 if(n==JOptionPane.YES_OPTION)
 					 {
@@ -159,7 +159,7 @@ public class BuyHouse extends Place{ //HouseOperation
 							MainGame.setInialmoney1(0);
 					 }
 				 }
-				 if(player==2) {
+				 if(player==2) {// nếu máy vô trừ tiền máy tăng tiền mình
 					 if(MainGame.getInialmoney2()>=Place.getPrice2())
 					 {
 							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice2());
@@ -206,9 +206,9 @@ public class BuyHouse extends Place{ //HouseOperation
 				 	
 			 }
 		 }
-		 else if(buy[player][a]==0) // nếu tại vi tri này chua mua
+		 else if(buy[player][a]==0) // nếu tại vi tri này chua mua có nghĩa là mình và máy chưa mua và chỉ vô duy nhất một lần vì mua xong sẽ chỉ cần nâng cấp nhà
 		 {
-			 if(player==1) {
+			 if(player==1) { // player =1 là mình
 				 Object[] options = {list[5],list[6]};
 				 int n = JOptionPane.showOptionDialog(game,list[7],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 				 // hỏi muốn mua hay k yes hoac no
@@ -227,14 +227,14 @@ public class BuyHouse extends Place{ //HouseOperation
 					 					MainGame.getMode().addElement(a);
 					 				else // neu khac 1 
 					 				{
-					 					for(int i=1;i<=MainGame.getMode().getSize();i++) {
+					 					for(int i=1;i<MainGame.getMode().getSize();i++) {
 					 						checkcombo = (int) MainGame.getMode().getElementAt(i); // lay gia tri mode tai vi tri i va ep kieu int
 					 						if(a>checkcombo) // nếu gia tri a lon hon thi insert a tai vi tri i
 					 							{
 					 								MainGame.getMode().insertElementAt(a, i);
 					 								break;
 					 							}
-					 						else if(i==MainGame.getMode().getSize())
+					 						else if(i==MainGame.getMode().getSize()-1)
 					 							MainGame.getMode().addElement(a);
 					 					}
 					 				}
@@ -256,6 +256,8 @@ public class BuyHouse extends Place{ //HouseOperation
 						 								MainGame.getMode().insertElementAt(a, i);
 						 								break;
 						 							}
+						 						else if(i==MainGame.getMode().getSize()-1)
+						 							MainGame.getMode().addElement(a);
 						 					}
 						 				}
 						 			
@@ -276,6 +278,8 @@ public class BuyHouse extends Place{ //HouseOperation
 						 								MainGame.getMode().insertElementAt(a, i);
 						 								break;
 						 							}
+						 						else if(i==MainGame.getMode().getSize()-1)
+						 							MainGame.getMode().addElement(a);
 						 					}
 						 				}
 						 			
@@ -303,29 +307,29 @@ public class BuyHouse extends Place{ //HouseOperation
 				if(player==1) {
 					 Object[] options1 = {list[9],list[10],list[11]};
 					 	int n1 = JOptionPane.showOptionDialog(game,list[13],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options1,options1[2]);
-					 	if(n1==JOptionPane.YES_OPTION)
+					 	if(n1==JOptionPane.YES_OPTION) // xay từ nha 1 len nha 2 
 				 		{
 				 			buy[player][a]=2;
 				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
 				 		}
-					 	else if(n1==JOptionPane.NO_OPTION)
+					 	else if(n1==JOptionPane.NO_OPTION) // xây từ nhà 2 len nhà 3
 				 		{
 				 			buy[player][a]=3;
 				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1()*2);
 				 		}
 				}
-				else if(player==2) {
-					if(MainGame.getInialmoney2()>Place.getPrice1()*2+500) {
+				else if(player==2) { // với máy xét từ trên xuống dưới nếu đủ tiền mua luôn nhà 3 thì mua khong mua nha 2 không thì skip
+					if(MainGame.getInialmoney2()>Place.getPrice1()*2+500) { // xay từ nhà 1 len nha 3
 						MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1()*2);
 		 				buy[player][a]=3;
 		 			}
-		 			else if(MainGame.getInialmoney2()>Place.getPrice1()+200) {
+		 			else if(MainGame.getInialmoney2()>Place.getPrice1()+200) {// xay tu nha 1 len nha 2
 		 				MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
 		 				buy[player][a]=2;
 		 			}
 				}
 			 }
-			 else if(buy[player][a]==2) {
+			 else if(buy[player][a]==2) { // nếu đã có 2 nhà chỉ cần xây them nha 3
 			if(player==1) {
 				 Object[] options1 = {list[10],list[11]};
 				 	int n1 = JOptionPane.showOptionDialog(game,list[13],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options1,options1[1]);
@@ -335,18 +339,18 @@ public class BuyHouse extends Place{ //HouseOperation
 			 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
 			 		}
 			}
-			else if(player==2) {
+			else if(player==2) { 
 				if(MainGame.getInialmoney2()>Place.getPrice1()+200) {
 					MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
 	 				buy[player][a]=3;
 	 			}
 			}
 		}
-			 else {
+			 else { 	// xay nha 3 rùi
 				if(player==1) {
 					 Object[] options1 = {list[12],list[11]};
 					 	int n1 = JOptionPane.showOptionDialog(game,list[13],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options1,options1[1]);
-					 	if(n1==JOptionPane.YES_OPTION)
+					 	if(n1==JOptionPane.YES_OPTION) // xay villa
 				 		{
 				 			buy[player][a]=4;
 				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
