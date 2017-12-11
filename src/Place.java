@@ -174,6 +174,6 @@ public class Place {
 	public void setColor(Color color) {
 		this.color = color;
 	}
-	
+	public static void house(int a,int player) {};
 
 }

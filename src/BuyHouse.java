@@ -43,6 +43,7 @@ public class BuyHouse extends Place{ //HouseOperation
 				
 		 }
 		 else if(a==5||a==15||a==25||a==35) {
+			 int checkcombo;
 			 if(player==1) {
 				if(buy[1][a]==0) {
 					 Object[] options = {list[5],list[6]};
@@ -51,7 +52,23 @@ public class BuyHouse extends Place{ //HouseOperation
 						 {
 						 	MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPriceini());
 						 	buy[1][a]=1;
+						 	if(MainGame.getMode().getSize()==1) // kiem tra xem mode cua DefaultComboBoxModel co size == 1 k có thi add vi tri a vao mode
+			 					MainGame.getMode().addElement(a);
+			 				else // neu khac 1 
+			 				{
+			 					for(int i=1;i<=MainGame.getMode().getSize();i++) {
+			 						checkcombo = (int) MainGame.getMode().getElementAt(i); // lay gia tri mode tai vi tri i va ep kieu int
+			 						if(a>checkcombo) // nếu gia tri a lon hon thi insert a tai vi tri i
+			 							{
+			 								MainGame.getMode().insertElementAt(a, i);
+			 								break;
+			 							}
+			 						else if(i==MainGame.getMode().getSize())
+			 							MainGame.getMode().addElement(a); 
+			 					}
+			 				}
 						 }
+		 				
 				}
 				else {
 					int totalprice=0;
@@ -293,7 +310,7 @@ public class BuyHouse extends Place{ //HouseOperation
 				 		}
 					 	else if(n1==JOptionPane.NO_OPTION)
 				 		{
-				 			buy[player][a]=2;
+				 			buy[player][a]=3;
 				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1()*2);
 				 		}
 				}

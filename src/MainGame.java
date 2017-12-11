@@ -413,6 +413,7 @@ public class MainGame extends JFrame {
 		Chance chance = new Chance();
 		CommunityChest communitychest = new CommunityChest();
 		CameraDice cameradice = new CameraDice();
+		Place place = new BuyHouse();
 		camera.shown();
 		cameracomputer.shown();
 		chance.shown();
@@ -521,7 +522,7 @@ public class MainGame extends JFrame {
 						prision1 = 3;
 					}
 					game.house(locationPlayer);
-					BuyHouse.house(locationPlayer, 1);
+					place.house(locationPlayer, 1);
 					System.out.println(locationPlayer);
 					System.out.println(inialmoney1);
 				}
