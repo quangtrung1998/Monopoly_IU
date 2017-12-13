@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-@SuppressWarnings("serial")
 public class MenuGame  extends JFrame implements ShowCamera{
 	private static JButton btnDice;
 	private static JButton btnDice1;

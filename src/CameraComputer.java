@@ -1,6 +1,5 @@
 import javax.swing.JFrame;
 
-@SuppressWarnings("serial")
 public class CameraComputer extends JFrame implements ShowCamera{
 	private CameraShowComputer camerashowcomputer;
 	/**

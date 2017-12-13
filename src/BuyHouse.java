@@ -26,7 +26,7 @@ public class BuyHouse extends Place{ //HouseOperation
 	}
 	private static void addElementToMode(int element) {
 		int checkcombo;
-		if(MainGame.getMode().getSize()==1) // kiem tra xem mode cua DefaultComboBoxModel co size == 1 k có thi add vi tri a vao mode
+			if(MainGame.getMode().getSize()==1) // kiem tra xem mode cua DefaultComboBoxModel co size == 1 k có thi add vi tri a vao mode
 				MainGame.getMode().addElement(element); // Thêm phần tử đã cho tới cuối của Vector này, tăng kích cỡ nó thêm 1
 			else // neu khac 1 
 			{

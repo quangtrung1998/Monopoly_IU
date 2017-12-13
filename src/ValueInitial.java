@@ -7,7 +7,6 @@ public class ValueInitial {
 	 * save and create the initial value
 	 * @return 	take and active this value
 	 */
-	@SuppressWarnings("static-access")
 	public static void getValue(){
 		game.setInialmoney1(1500); // set tiền của mình
 		game.setInialmoney2(1500); // set tiền của máy

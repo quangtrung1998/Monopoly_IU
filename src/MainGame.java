@@ -335,9 +335,8 @@ public class MainGame extends JFrame {
 	{
 		place = new Place();
 		place.setLocate(a);
-		place.work();
-		Color col = place.getColor();
-		namePrice.setBackground(col);
+		place.work(); 
+		namePrice.setBackground(place.getColor());
 		 if(a==2||a==4||a==7||a==10||a==17||a==22||a==33||a==36||a==38||a==40||a==0||a==20||a==30)
 		 {
 				priceini.setText("");
@@ -377,7 +376,6 @@ public class MainGame extends JFrame {
 	 * @param a : locate of player or computer
 	 * @return 	change the value 
 	 */
-	@SuppressWarnings("static-access")
 	private void houseBought(int a)
 	{
 		place = new Place();
@@ -435,12 +433,7 @@ public class MainGame extends JFrame {
 	}
 	private void workPlayer() throws InterruptedException {
 		if (isConditionMove()) {
-			if (locationPlayer >= 40)
-			{
-				locationPlayer -= 40;
-				inialmoney1 += 200;
-			}
-			else if (locationPlayer == 7 || locationPlayer == 22 || locationPlayer == 36) {
+			if (locationPlayer == 7 || locationPlayer == 22 || locationPlayer == 36) {
 
 				chance.change(1);
 				chance.setVisible(true);
@@ -467,8 +460,10 @@ public class MainGame extends JFrame {
 					game.repaint();
 					Thread.sleep(200);
 					sum--;
+					if (locationPlayer >= 40)
+						locationPlayer -= 40;
+					
 				}
-				locationPlayer = 10;
 				prision1 = 3;
 			}
 			game.house(locationPlayer);
@@ -479,13 +474,7 @@ public class MainGame extends JFrame {
 	}
 	private void workComputer() throws InterruptedException{
 		if (isConditionMove()) {
-			if (locationComputer >= 40)
-			{
-				locationComputer -= 40;
-				inialmoney2 += 200;
-			}
-			else if (locationComputer == 7 || locationComputer == 22 || locationComputer == 36) {
-				game.house(locationComputer);
+			if (locationComputer == 7 || locationComputer == 22 || locationComputer == 36) {
 				chance.change(1);
 				chance.setVisible(true);
 				game.repaint();
@@ -511,8 +500,9 @@ public class MainGame extends JFrame {
 					game.repaint();
 					Thread.sleep(200);
 					sum--;
+					if (locationComputer >= 40)
+						locationComputer -= 40;
 				}
-				locationComputer = 10;
 				prision2 = 3;
 			}
 			game.house(locationComputer);
@@ -527,14 +517,14 @@ public class MainGame extends JFrame {
 		for (int i = 0; i<range; i++) {
 			ChangeDice.setDiceleft(2);
 			ChangeDice.setDiceright(2);
-			cameradice.change(2);
+			cameradice.repaint();
 			game.repaint();
 			Thread.sleep(time);
 		}
 		ChangeDice.setDiceleft(2);
 		ChangeDice.setDiceright(2);
 		sum = ChangeDice.getDiceleft() + ChangeDice.getDiceright();
-		cameradice.change(2);
+		cameradice.repaint();
 		game.repaint();
 		Thread.sleep(3000);
 		cameradice.setVisible(false);
@@ -554,7 +544,7 @@ public class MainGame extends JFrame {
 		chance.dispose();
 		communitychest.dispose();
 	}
-	public static void run() throws InterruptedException {//Ngắt luồng đang được thực thi​
+	public static void runPlay() throws InterruptedException {//Ngắt luồng đang được thực thi​
 		game = new MainGame();
 		cameracomputer = new CameraComputer();
 		camera = new Camera();
@@ -607,7 +597,7 @@ public class MainGame extends JFrame {
 					game.repaint();
 					Thread.sleep(200);//Phương thức sleep() của lớp Thread được sử dụng để tạm ngứng một thread cho một khoảng thời gian nhất định.
 					sum--;
-					if (locationPlayer >= 40)
+					if (locationPlayer == 40)
 					{
 						locationPlayer -= 40;
 						inialmoney1 += 200;// add condition because locationComputer >=40 show false image

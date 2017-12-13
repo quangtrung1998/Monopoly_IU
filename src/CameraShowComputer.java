@@ -3,7 +3,6 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
 public class CameraShowComputer extends JPanel implements Image{
 	private static int changeimage;
 	private static BuyHouse buyhouse;

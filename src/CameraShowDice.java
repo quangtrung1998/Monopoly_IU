@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
+
 public class CameraShowDice extends JPanel implements Image{
 	/**
 	 * Change

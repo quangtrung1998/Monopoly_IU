@@ -2,7 +2,6 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 
-@SuppressWarnings("serial")
 public class CommunityChest extends JFrame implements ShowCamera{
 	private ImageCommunityChest imagecommunitychest;
 	/**

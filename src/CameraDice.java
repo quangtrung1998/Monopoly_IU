@@ -1,6 +1,5 @@
 import javax.swing.JFrame;
 
-@SuppressWarnings("serial")
 public class CameraDice extends JFrame implements ShowCamera{
 	/**
 	 * Change

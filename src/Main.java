@@ -7,7 +7,7 @@ public class Main {
 	private static  ValueInitial valueinitial;
 	private static  MainGame maingame;
 	private static Test test;
-	@SuppressWarnings("static-access")
+	
 	public static void main(String[] args) throws InterruptedException  {
 		while(true) {
 			if(f==1) {
@@ -18,7 +18,7 @@ public class Main {
 			else if(test.getA()==2)
 			{	
 				valueinitial.getValue();
-				maingame.run();
+				maingame.runPlay();
 				f=1;
 				test.setA(1);
 			}

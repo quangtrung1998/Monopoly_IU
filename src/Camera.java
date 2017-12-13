@@ -1,7 +1,7 @@
 
 import javax.swing.JFrame;
 
-@SuppressWarnings("serial")
+
 public class Camera extends JFrame implements ShowCamera{
 	private CameraShow camerashow;
 	/**
@@ -9,7 +9,7 @@ public class Camera extends JFrame implements ShowCamera{
 	 * @return 	clear table and paint again
 	 */
 	public Camera() {	
-			repaint();
+			
 		}
 		/**
 		 * Change
