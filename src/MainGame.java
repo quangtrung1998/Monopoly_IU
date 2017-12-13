@@ -96,17 +96,18 @@ public class MainGame extends JFrame {
 	 * 	money of computer
 	 */
 	private static int inialmoney2 ;
-	private static int player1, sav;
+	private static int player1;
+	private static int  sav;
 	private static boolean conditionMove ;
 	private static DefaultComboBoxModel<Object> mode;
 	private static JComboBox<Object> comboBox;
 	private JPanel panel_1;
 	private JPanel panel_2;
-	private final String INITIALPRICE = " INITIAL PRICE  : ";
-	private final String STRINGPRICE1 = " House : ";
-	private final String STRINGPRICE2 = " Station : ";
-	private final String STRINGPRICE3 = " Villa: ";
-	private final String STRINGFONT = "Bradley Hand ITC";
+	private final String initialPrice = " INITIAL PRICE  : ";
+	private final String stringPrice1 = " House : ";
+	private final String stringPrice2 = " Station : ";
+	private final String stringPrice3 = " Villa: ";
+	private final String stringfont = "Bradley Hand ITC";
 	private static Camera camera;
 	private static CameraComputer cameracomputer;
 	private static Chance chance ;
@@ -136,23 +137,23 @@ public class MainGame extends JFrame {
 		namePrice.setBounds(25, 65, 240, 36);
 		panel_1.add(namePrice);
 		priceini = new JLabel();
-		priceini.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		priceini.setFont(new Font(stringfont, Font.PLAIN, 20));
 		priceini.setBounds(30, 95, 240, 50);
 		panel_1.add(priceini);
 		price1 = new JLabel();
-		price1.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		price1.setFont(new Font(stringfont, Font.PLAIN, 20));
 		price1.setBounds(30, 131, 240, 50);
 		panel_1.add(price1);
 		price2 = new JLabel();
-		price2.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		price2.setFont(new Font(stringfont, Font.PLAIN, 20));
 		price2.setBounds(30, 163, 240, 50);
 		panel_1.add(price2);
 		price3 = new JLabel();
-		price3.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		price3.setFont(new Font(stringfont, Font.PLAIN, 20));
 		price3.setBounds(30, 196, 240, 50);
 		panel_1.add(price3);
 		villa = new JLabel("");
-		villa.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		villa.setFont(new Font(stringfont, Font.PLAIN, 20));
 		villa.setBounds(30, 234, 240, 50);
 		panel_1.add(villa);
 	    panel_2 = new JPanel();
@@ -165,23 +166,23 @@ public class MainGame extends JFrame {
 		namePrice1.setBounds(25, 65, 240, 36);
 		panel_2.add(namePrice1);
 		priceini1 = new JLabel();
-		priceini1.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		priceini1.setFont(new Font(stringfont, Font.PLAIN, 20));
 		priceini1.setBounds(30, 95, 240, 50);
 		panel_2.add(priceini1);
 		price11 = new JLabel();
-		price11.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		price11.setFont(new Font(stringfont, Font.PLAIN, 20));
 		price11.setBounds(30, 131, 240, 50);
 		panel_2.add(price11);
 		price21 = new JLabel();
-		price21.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		price21.setFont(new Font(stringfont, Font.PLAIN, 20));
 		price21.setBounds(30, 163, 240, 50);
 		panel_2.add(price21);
 		price31 = new JLabel();
-		price31.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		price31.setFont(new Font(stringfont, Font.PLAIN, 20));
 		price31.setBounds(30, 196, 240, 50);
 		panel_2.add(price31);
 		villa1 = new JLabel();
-		villa1.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		villa1.setFont(new Font(stringfont, Font.PLAIN, 20));
 		villa1.setBounds(30, 234, 240, 50);
 		panel_2.add(villa1);
 		moneyPlayer = new JLabel();
@@ -193,7 +194,7 @@ public class MainGame extends JFrame {
 		moneyComputer.setBounds(1010, 310, 400, 28);
 		add(moneyComputer);
 		comboBox = new JComboBox<>();
-		comboBox.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
+		comboBox.setFont(new Font(stringfont, Font.PLAIN, 20));
 		mode = new DefaultComboBoxModel<>();
 		mode.addElement("     House was bought");
 		comboBox.setModel(mode);
@@ -347,28 +348,28 @@ public class MainGame extends JFrame {
 		 }
 		 else if (a == 5 || a == 15 || a == 25 || a == 35) {
 			int pr = place.getPriceini();
-			priceini.setText(INITIALPRICE + pr);
+			priceini.setText(initialPrice + pr);
 			int pr1 = place.getPrice1();
-			price1.setText(1 + STRINGPRICE2 + pr1);
+			price1.setText(1 + stringPrice2 + pr1);
 			int pr2 = place.getPrice2();
-			price2.setText(2 + STRINGPRICE2 + pr2);
+			price2.setText(2 + stringPrice2 + pr2);
 			int pr3 = place.getPrice3();
-			price3.setText(3 + STRINGPRICE2 + pr3);
+			price3.setText(3 + stringPrice2 + pr3);
 			int vil = place.getVilla();
-			villa.setText(4 + STRINGPRICE2 + vil);
+			villa.setText(4 + stringPrice2 + vil);
 		}
 		else
 		{
 			int pr = place.getPriceini();
-			priceini.setText(INITIALPRICE + pr);
+			priceini.setText(initialPrice + pr);
 			int pr1 = place.getPrice1();
-			price1.setText(1 + STRINGPRICE1 + pr1);
+			price1.setText(1 + stringPrice1 + pr1);
 			int pr2 = place.getPrice2();
-			price2.setText(2 + STRINGPRICE1 + pr2);
+			price2.setText(2 + stringPrice1 + pr2);
 			int pr3 = place.getPrice3();
-			price3.setText(3 + STRINGPRICE1 + pr3);
+			price3.setText(3 + stringPrice1 + pr3);
 			int vil = place.getVilla();
-			villa.setText(STRINGPRICE3 + vil);
+			villa.setText(stringPrice3 + vil);
 		}
 	}
 	/**
@@ -393,28 +394,28 @@ public class MainGame extends JFrame {
 		 }
 		 else if (a == 5 || a == 15 || a == 25 || a == 35) {
 			int pr1 = place.getPriceini();
-			priceini1.setText(INITIALPRICE + pr1);
+			priceini1.setText(initialPrice + pr1);
 			int pr11 = place.getPrice1();
-			price11.setText(1 + STRINGPRICE2 + pr11);
+			price11.setText(1 + stringPrice2 + pr11);
 			int pr21 = place.getPrice2();
-			price21.setText(2 + STRINGPRICE2 + pr21);
+			price21.setText(2 + stringPrice2 + pr21);
 			int pr31 = place.getPrice3();
-			price31.setText(3 + STRINGPRICE2 + pr31);
+			price31.setText(3 + stringPrice2 + pr31);
 			int vil1 = place.getVilla();
-			villa1.setText(4 + STRINGPRICE2 + vil1);
+			villa1.setText(4 + stringPrice2 + vil1);
 		}
 		else
 		{
 			int pr1 = place.getPriceini();
-			priceini1.setText(INITIALPRICE + pr1);
+			priceini1.setText(initialPrice + pr1);
 			int pr11 = place.getPrice1();
-			price11.setText(1 + STRINGPRICE1 + pr11);
+			price11.setText(1 + stringPrice1 + pr11);
 			int pr21 = place.getPrice2();
-			price21.setText(2 + STRINGPRICE1 + pr21);
+			price21.setText(2 + stringPrice1 + pr21);
 			int pr31 = place.getPrice3();
-			price31.setText(3 + STRINGPRICE1 + pr31);
+			price31.setText(3 + stringPrice1 + pr31);
 			int vil1 = place.getVilla();
-			villa1.setText(STRINGPRICE3 + vil1);
+			villa1.setText(stringPrice3 + vil1);
 		}
 	}
 	/**
@@ -456,6 +457,7 @@ public class MainGame extends JFrame {
 				{
 					locationPlayer++;
 					game.move();
+					game.house(locationPlayer);
 					camera.change(locationPlayer);
 					game.repaint();
 					Thread.sleep(200);
@@ -639,23 +641,23 @@ public class MainGame extends JFrame {
 			if (prision1 != 0 && prision2 != 0)
 			{
 			
-				JOptionPane.showMessageDialog(game, "You has "+prision1+" turn to out prision");
+				JOptionPane.showMessageDialog(game, "You have "+prision1+" turn to out prision");
 				prision1--;
 				Thread.sleep(200);
-				JOptionPane.showMessageDialog(game, "You has "+prision2+" turn to out prision");
+				JOptionPane.showMessageDialog(game, "You have "+prision2+" turn to out prision");
 				prision2--;
 			}
 			else if (prision1 != 0 && prision2 == 0)
 			{
 				
-				JOptionPane.showMessageDialog(game, "You has "+prision1+" turn to out prision");
+				JOptionPane.showMessageDialog(game, "You have "+prision1+" turn to out prision");
 				prision1--;
 				player1 = 2;
 				Thread.sleep(200);
 			}
 			else if (prision2 != 0 && prision1 == 0 &&sav!=0)
 			{
-				JOptionPane.showMessageDialog(game, "You has "+prision2+" turn to out prision");
+				JOptionPane.showMessageDialog(game, "You have "+prision2+" turn to out prision");
 				prision2--;
 				player1 = 1;
 				Thread.sleep(200);

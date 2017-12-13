@@ -5,9 +5,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class MenuGame  extends JFrame implements ShowCamera{
-	private static JButton btnDice;
-	private static JButton btnDice1;
-	private static BackgroundMenugame backgroundmenugame;
+		private static JButton btnDice;
+		private static JButton btnDice1;
 		public static JButton getBtnDice() {
 		return btnDice;
 		}
@@ -31,14 +30,11 @@ public class MenuGame  extends JFrame implements ShowCamera{
 			btnDice1.setBounds(280, 580, 235, 58);
 			add(btnDice);
 			add(btnDice1);
-			backgroundmenugame = new BackgroundMenugame();
+			BackgroundMenugame backgroundmenugame = new BackgroundMenugame();
 			add(backgroundmenugame);
 			setVisible(true);
 		}
 		@Override
-		public void change(int data) {
-			// TODO Auto-generated method stub
-			
-		}
+		public void change(int data) {}
 
 }

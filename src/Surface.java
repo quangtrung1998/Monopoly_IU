@@ -7,27 +7,56 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class Surface extends JPanel {
-	private static int xplayer = 871;
-	private static int yplayer = 590;
-	private static int xa = 1;
-	private static int xa1=1;
-	private static int xcomputer=871;
-	private static int ycomputer=590;
+	private static int xplayer;
+	private static int yplayer;
+	private static int xa ;
+	private static int xa1;
+	private static int xcomputer;
+	private static int ycomputer;
+	/**
+	 * location horizontal of player
+	 * @param   xplayer : toa do x // x ban dau = 871
+	 * @return 	change xplayer
+	 */
 	public static void setXplayer(int xplayer) {
 		Surface.xplayer = xplayer;
 	}
+	/**
+	 * location vertical of player
+	 * @param   yplayer : toa do y // y ban dau = 590
+	 * @return 	change yplayer
+	 */
 	public static void setYplayer(int yplayer) {
 		Surface.yplayer = yplayer;
-	}
+	}/**
+	 * change picture of computer
+	 * @param   xa : path picture // path picture ban dau la 1
+	 * @return 	change xa
+	 */
 	public static void setXa(int xa) {
 		Surface.xa = xa;
 	}
+	/**
+	 * change picture of player
+	 * @param   xa1 : path picture // path picture ban dau la 1
+	 * @return 	change xa1
+	 */
 	public static void setXa1(int xa1) {
 		Surface.xa1 = xa1;
 	}
+	/**
+	 * location horizontal of player
+	 * @param   xcomputer : toa do x // x ban dau = 871
+	 * @return 	change xcomputer
+	 */
 	public static void setXcomputer(int xcomputer) {
 		Surface.xcomputer = xcomputer;
 	}
+	/**
+	 * location vertical of computer
+	 * @param   ycomputer : toa do y // y ban dau = 590
+	 * @return 	change ycomputer
+	 */
 	public static void setYcomputer(int ycomputer) {
 		Surface.ycomputer = ycomputer;
 	}

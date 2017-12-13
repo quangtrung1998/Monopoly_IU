@@ -42,8 +42,5 @@ public class ImageChance extends JPanel implements Image{
 	 * @return 	show the image in the frame
 	 */
 	@Override
-	public void paint1(Graphics g, String path, int x, int y, int width, int height) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void paint1(Graphics g, String path, int x, int y, int width, int height) {}
 }

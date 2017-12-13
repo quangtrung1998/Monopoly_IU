@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 
 public class CameraShowComputer extends JPanel implements Image{
 	private static int changeimage;
-	private static BuyHouse buyhouse;
 	/**
 	 * Change
 	 * @return 	data change and paint again
@@ -45,35 +44,35 @@ public class CameraShowComputer extends JPanel implements Image{
 	public void paint(Graphics g)
     {
 		paint1(g,changeimage+".jpg",0,0,340,310);
-		if(buyhouse.getBuy()[1][changeimage]==1) {
+		if(BuyHouse.getBuy()[1][changeimage]==1) {
 			paint1(g,"house.png",120, 120,60,60);
 			
 		}
-		else if(buyhouse.getBuy()[1][changeimage]==2) {
+		else if(BuyHouse.getBuy()[1][changeimage]==2) {
 			paint1(g,"house.png",90, 120,60,60);
 			paint1(g,"house.png",150, 120,60,60);
 		}
-		else if(buyhouse.getBuy()[1][changeimage]==3) {
+		else if(BuyHouse.getBuy()[1][changeimage]==3) {
 			paint1(g,"house.png",90, 120,60,60);
 			paint1(g,"house.png",150, 120,60,60);
 			paint1(g,"house.png",210, 120,60,60);
 		}
-		else if(buyhouse.getBuy()[1][changeimage]==4) {
+		else if(BuyHouse.getBuy()[1][changeimage]==4) {
 			paint1(g,"hotel.png",120, 120,60,60);
 		}
-		else if(buyhouse.getBuy()[2][changeimage]==1) {
+		else if(BuyHouse.getBuy()[2][changeimage]==1) {
 			paint1(g,"housecomputer.png",120, 120,60,60);
 		}
-		else if(buyhouse.getBuy()[2][changeimage]==2) {
+		else if(BuyHouse.getBuy()[2][changeimage]==2) {
 			paint1(g,"housecomputer.png",90, 120,60,60);
 			paint1(g,"housecomputer.png",150, 120,60,60);
 		}
-		else if(buyhouse.getBuy()[2][changeimage]==3) {
+		else if(BuyHouse.getBuy()[2][changeimage]==3) {
 			paint1(g,"housecomputer.png",90, 120,60,60);
 			paint1(g,"housecomputer.png",150, 120,60,60);
 			paint1(g,"housecomputer.png",210, 120,60,60);
 		}
-		else if(buyhouse.getBuy()[2][changeimage]==4) {
+		else if(BuyHouse.getBuy()[2][changeimage]==4) {
 			paint1(g,"hotelcomputer.png",120, 120,60,60);
 		}
     }
