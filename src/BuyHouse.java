@@ -68,7 +68,7 @@ public class BuyHouse extends Place{ //HouseOperation
 					 int n = JOptionPane.showOptionDialog(game,list[7],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 					 if(n==JOptionPane.YES_OPTION) // mua
 						 {
-						 	MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPriceini()); // set lai gia trị tiền của người chơi
+						 	MainGame.setInialmoney1(MainGame.getInialmoney1()-getPriceini()); // set lai gia trị tiền của người chơi
 						 	buy[1][a]=1;
 						 	addElementToMode(a);
 						 }
@@ -81,20 +81,20 @@ public class BuyHouse extends Place{ //HouseOperation
 							totalprice++;
 					} // bước for kiểm tra xem thằng máy tính mua được mấy bên xe
 					if(totalprice==1) // mua dc một bến trừ tiền 1 bến 
-						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
+						MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1());
 					else if(totalprice==2)// 2 bến trừ tiền 2 bến 
-						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice2());
+						MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice2());
 					else if(totalprice==3)// 3 bến trừ tiền 3 bến
-						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice3());
+						MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice3());
 					else if(totalprice==4)// 4 bến trừ tiền 4 bến
-						MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getVilla());
+						MainGame.setInialmoney1(MainGame.getInialmoney1()-getVilla());
 				}
 			 }
 			 else if(player==2) { // máy chơi
 				 if(buy[2][a]==0) {// nếu mình chưa mua máy sẽ kiểm tra xem mình đủ tiền mua không ?
-					 if(MainGame.getInialmoney2()>Place.getPriceini()+200) // đủ thì máy mua tư tưởng là lấy tiên hiện tại của minh so với giá đất +200
+					 if(MainGame.getInialmoney2()>getPriceini()+200) // đủ thì máy mua tư tưởng là lấy tiên hiện tại của minh so với giá đất +200
 						 {
-						 MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPriceini());
+						 MainGame.setInialmoney2(MainGame.getInialmoney2()-getPriceini());
 						 	buy[2][a]=1;
 						 }
 				}
@@ -105,13 +105,13 @@ public class BuyHouse extends Place{ //HouseOperation
 							totalprice++;
 					}
 					if(totalprice==1)
-						MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
+						MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice1());
 					else if(totalprice==2)
-						MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice2());
+						MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice2());
 					else if(totalprice==3)
-						MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice3());
+						MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice3());
 					else if(totalprice==4)
-						MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getVilla());
+						MainGame.setInialmoney2(MainGame.getInialmoney2()-getVilla());
 				}
 			 }
 		 }
@@ -122,91 +122,91 @@ public class BuyHouse extends Place{ //HouseOperation
 			 {	
 				 
 				 if(player==1) { // nếu mình vô trừ tiền mình tăng tiền máy
-					 int n = JOptionPane.showOptionDialog(game,list[0]+Place.getPrice1()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+					 int n = JOptionPane.showOptionDialog(game,list[0]+getPrice1()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 					 // hiển thị hộp thoại xác nhận nếu nhấn yes với yes là trả tiền no là phá sản
 					 if(n==JOptionPane.YES_OPTION)
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()+Place.getPrice1());
-							MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
+							MainGame.setInialmoney2(MainGame.getInialmoney2()+getPrice1());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1());
 					 }
 					 else if(n==JOptionPane.NO_OPTION)
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()+Place.getPrice1());
+							MainGame.setInialmoney2(MainGame.getInialmoney2()+getPrice1());
 							MainGame.setInialmoney1(0);
 					 }
 				 }
 				 if(player==2) { // nếu máy vô trừ tiền máy tăng tiền mình
-					 if(MainGame.getInialmoney2()>=Place.getPrice1())
+					 if(MainGame.getInialmoney2()>=getPrice1())
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
-							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice1());
+							MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice1());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+getPrice1());
 					 }
-					 else if(MainGame.getInialmoney2()<Place.getPrice1()) // nếu k đủ tiền phá sản
+					 else if(MainGame.getInialmoney2()<getPrice1()) // nếu k đủ tiền phá sản
 					 {
 							MainGame.setInialmoney2(0);
-							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice1());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+getPrice1());
 					 }
 				 }
 			 }
 			 else if(buy[check][a]==2) // nếu đã mua được 2 căn
 			 {
 				 if(player==1) { // nếu mình vô trừ tiền mình tăng tiền máy
-					 int n = JOptionPane.showOptionDialog(game,list[0]+Place.getPrice2()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+					 int n = JOptionPane.showOptionDialog(game,list[0]+getPrice2()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 					 if(n==JOptionPane.YES_OPTION)
 					 {
-						 MainGame.setInialmoney2(MainGame.getInialmoney2()+Place.getPrice2());
-							MainGame.setInialmoney1(MainGame.getInialmoney2()-Place.getPrice2());
+						 MainGame.setInialmoney2(MainGame.getInialmoney2()+getPrice2());
+							MainGame.setInialmoney1(MainGame.getInialmoney2()-getPrice2());
 					 }
 					 else if(n==JOptionPane.NO_OPTION)
 					 {
-						 MainGame.setInialmoney2(MainGame.getInialmoney2()+Place.getPrice2());
+						 MainGame.setInialmoney2(MainGame.getInialmoney2()+getPrice2());
 							MainGame.setInialmoney1(0);
 					 }
 				 }
 				 if(player==2) {// nếu máy vô trừ tiền máy tăng tiền mình
-					 if(MainGame.getInialmoney2()>=Place.getPrice2())
+					 if(MainGame.getInialmoney2()>=getPrice2())
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice2());
-							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice2());
+							MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice2());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+getPrice2());
 					 }
-					 else if(MainGame.getInialmoney2()<Place.getPrice1())
+					 else if(MainGame.getInialmoney2()<getPrice1())
 					 {
 							MainGame.setInialmoney2(0);
-							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice2());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+getPrice2());
 					 }
 				 }
 			 }
 			 else if(buy[check][a]==3)
 			 {
 				 if(player==1) {
-					 int n = JOptionPane.showOptionDialog(game,list[0]+Place.getPrice3()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+					 int n = JOptionPane.showOptionDialog(game,list[0]+getPrice3()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 					 if(n==JOptionPane.YES_OPTION)
 					 {
-						 MainGame.setInialmoney2(MainGame.getInialmoney2()+Place.getPrice3());
-							MainGame.setInialmoney1(MainGame.getInialmoney2()-Place.getPrice3());
+						 MainGame.setInialmoney2(MainGame.getInialmoney2()+getPrice3());
+							MainGame.setInialmoney1(MainGame.getInialmoney2()-getPrice3());
 					 }
 					 else if(n==JOptionPane.NO_OPTION)
 					 {
-						 MainGame.setInialmoney2(MainGame.getInialmoney2()+Place.getPrice3());
+						 MainGame.setInialmoney2(MainGame.getInialmoney2()+getPrice3());
 							MainGame.setInialmoney1(0);
 					 }
 				 }
 				 if(player==2) {
-					 if(MainGame.getInialmoney2()>=Place.getPrice3())
+					 if(MainGame.getInialmoney2()>=getPrice3())
 					 {
-							MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice3());
-							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice3());
+							MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice3());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+getPrice3());
 					 }
-					 else if(MainGame.getInialmoney2()<Place.getPrice1())
+					 else if(MainGame.getInialmoney2()<getPrice1())
 					 {
 							MainGame.setInialmoney2(0);
-							MainGame.setInialmoney1(MainGame.getInialmoney1()+Place.getPrice3());
+							MainGame.setInialmoney1(MainGame.getInialmoney1()+getPrice3());
 					 }
 				 }
 			 }
 			 else
 			 {
-				 	JOptionPane.showOptionDialog(game,list[0]+Place.getVilla()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+				 	JOptionPane.showOptionDialog(game,list[0]+getVilla()+list[1],list[2],JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
 				 	
 			 }
 		 }
@@ -226,37 +226,37 @@ public class BuyHouse extends Place{ //HouseOperation
 					 	if(n1==JOptionPane.YES_OPTION) // mua 1 nha
 					 		{
 					 			buy[player][a]=1;
-					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
+					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1());
 					 			addElementToMode(a);
 					 			
 					 		}
 					 	else if(n1==JOptionPane.NO_OPTION) // mua 2 nha
 					 		{
 					 			buy[player][a]=2;
-					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice2());
+					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice2());
 					 			addElementToMode(a);
 						 			
 					 		}
 					 	else if(n1==JOptionPane.CANCEL_OPTION) // mua 3 nha
 					 		{
 					 			buy[player][a]=3;
-					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice3());
+					 			MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice3());
 					 			addElementToMode(a);
 					 		}
 					 		 				 	
 				 }
 			 }
 			 else if(player==2) {
-		 			if(MainGame.getInialmoney2()>Place.getPrice3()+500) { // điều kiên để máy mua nhà 
-		 				MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice3());
+		 			if(MainGame.getInialmoney2()>getPrice3()+500) { // điều kiên để máy mua nhà 
+		 				MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice3());
 		 				buy[player][a]=3;
 		 			}
-		 			else if(MainGame.getInialmoney2()>Place.getPrice2()+200) {
-		 				MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice2());
+		 			else if(MainGame.getInialmoney2()>getPrice2()+200) {
+		 				MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice2());
 		 				buy[player][a]=2;
 		 			}
-		 			else if(MainGame.getInialmoney2()>Place.getPrice1()+100) {
-		 				MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
+		 			else if(MainGame.getInialmoney2()>getPrice1()+100) {
+		 				MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice1());
 		 				buy[player][a]=1;
 		 			}
 				}
@@ -269,21 +269,21 @@ public class BuyHouse extends Place{ //HouseOperation
 					 	if(n1==JOptionPane.YES_OPTION) // xay từ nha 1 len nha 2 
 				 		{
 				 			buy[player][a]=2;
-				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
+				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1());
 				 		}
 					 	else if(n1==JOptionPane.NO_OPTION) // xây từ nhà 2 len nhà 3
 				 		{
 				 			buy[player][a]=3;
-				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1()*2);
+				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1()*2);
 				 		}
 				}
 				else if(player==2) { // với máy xét từ trên xuống dưới nếu đủ tiền mua luôn nhà 3 thì mua khong mua nha 2 không thì skip
-					if(MainGame.getInialmoney2()>Place.getPrice1()*2+500) { // xay từ nhà 1 len nha 3
-						MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1()*2);
+					if(MainGame.getInialmoney2()>getPrice1()*2+500) { // xay từ nhà 1 len nha 3
+						MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice1()*2);
 		 				buy[player][a]=3;
 		 			}
-		 			else if(MainGame.getInialmoney2()>Place.getPrice1()+200) {// xay tu nha 1 len nha 2
-		 				MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
+		 			else if(MainGame.getInialmoney2()>getPrice1()+200) {// xay tu nha 1 len nha 2
+		 				MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1());
 		 				buy[player][a]=2;
 		 			}
 				}
@@ -295,12 +295,12 @@ public class BuyHouse extends Place{ //HouseOperation
 				 	if(n1==JOptionPane.YES_OPTION)
 			 		{
 			 			buy[player][a]=3;
-			 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
+			 			MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1());
 			 		}
 			}
 			else if(player==2) { 
-				if(MainGame.getInialmoney2()>Place.getPrice1()+200) {
-					MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
+				if(MainGame.getInialmoney2()>getPrice1()+200) {
+					MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice1());
 	 				buy[player][a]=3;
 	 			}
 			}
@@ -312,12 +312,12 @@ public class BuyHouse extends Place{ //HouseOperation
 					 	if(n1==JOptionPane.YES_OPTION) // xay villa
 				 		{
 				 			buy[player][a]=4;
-				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-Place.getPrice1());
+				 			MainGame.setInialmoney1(MainGame.getInialmoney1()-getPrice1());
 				 		}
 				}
 				else if(player==2) {
-					if(MainGame.getInialmoney2()>Place.getPrice1()+200) {
-						MainGame.setInialmoney2(MainGame.getInialmoney2()-Place.getPrice1());
+					if(MainGame.getInialmoney2()>getPrice1()+200) {
+						MainGame.setInialmoney2(MainGame.getInialmoney2()-getPrice1());
 		 				buy[player][a]=4;
 		 			}
 				}

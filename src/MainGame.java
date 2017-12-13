@@ -16,60 +16,60 @@ public class MainGame extends JFrame {
 	/**
 	 * Name of place
 	 */
-	private static JLabel namePrice;
+	private JLabel namePrice;
 	/**
 	 * 	Price of place was bought and don't build anything
 	 */
-	private static JLabel priceini;
+	private JLabel priceini;
 	/**
 	 * 	Price of place was bougth and build 1 house
 	 */
-	private static JLabel price1;
+	private JLabel price1;
 	/**
 	 * 	Price of place was bougth and build 2 house
 	 */
-	private static JLabel price2;
+	private JLabel price2;
 	/**
 	 * 	Price of place was bougth and build 3 house
 	 */
-	private static JLabel price3;
+	private JLabel price3;
 	/**
 	 * 	Price of place was bougth and build villa
 	 */
-	private static JLabel villa;
+	private JLabel villa;
 	/**
 	 * Name of place int the combobox
 	 */
-	private static JLabel namePrice1;
+	private JLabel namePrice1;
 	/**
 	 * 	Price of place was bougth and don't build anything in the combobox
 	 */
-	private static JLabel priceini1;
+	private JLabel priceini1;
 	/**
 	 * 	Price of place was bougth and build 1 house in the combobox
 	 */
-	private static JLabel price11;
+	private JLabel price11;
 	/**
 	 * 	Price of place was bougth and build 2 house in the combobox
 	 */
-	private static JLabel price21;
+	private JLabel price21;
 	/**
 	 * 	Price of place was bougth and build 3 house in the combobox
 	 */
-	private static JLabel price31;
+	private JLabel price31;
 	/**
 	 * 	Price of place was bougth and build villa in the combobox
 	 */
-	private static JLabel villa1;
+	private JLabel villa1;
 	/**
 	 * 	Money of player
 	 */
-	private static JLabel moneyPlayer;
+	private JLabel moneyPlayer;
 	/**
 	 * 	Money of computer
 	 */
-	private static JLabel moneyComputer;
-	private static Surface s;
+	private JLabel moneyComputer;
+	private Surface s;
 	private static JButton button;
 	private static int sum;
 	/**
@@ -96,22 +96,22 @@ public class MainGame extends JFrame {
 	 * 	money of computer
 	 */
 	private static int inialmoney2 ;
+	private static int player1, sav;
 	private static boolean conditionMove ;
 	private static DefaultComboBoxModel<Object> mode;
 	private static JComboBox<Object> comboBox;
-	private static int player1, sav;
-	private static final String INITIALPRICE = " INITIAL PRICE  : ";
-	private static final String STRINGPRICE1 = " House : ";
-	private static final String STRINGPRICE2 = " Station : ";
-	private static final String STRINGPRICE3 = " Villa: ";
-	private static final String STRINGFONT = "Bradley Hand ITC";
-	private static BuyHouse buyhouse;
+	private JPanel panel_1;
+	private JPanel panel_2;
+	private final String INITIALPRICE = " INITIAL PRICE  : ";
+	private final String STRINGPRICE1 = " House : ";
+	private final String STRINGPRICE2 = " Station : ";
+	private final String STRINGPRICE3 = " Villa: ";
+	private final String STRINGFONT = "Bradley Hand ITC";
 	private static Camera camera;
 	private static CameraComputer cameracomputer;
 	private static Chance chance ;
 	private static CommunityChest communitychest;
 	private static Place place;
-	private static ChangeDice changedice;
 	private static CameraDice cameradice;
 	private static MainGame game;
 	/**
@@ -126,7 +126,7 @@ public class MainGame extends JFrame {
 		button = new JButton("ROLL DICE");
 		button.setBounds(595, 320, 75, 70);
 		getContentPane().add(button);
-		JPanel panel_1 = new JPanel();
+	    panel_1 = new JPanel();
 		panel_1.setBounds(15, 360, 250, 400);
 		panel_1.setOpaque(false);
 		getContentPane().add(panel_1);
@@ -155,7 +155,7 @@ public class MainGame extends JFrame {
 		villa.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
 		villa.setBounds(30, 234, 240, 50);
 		panel_1.add(villa);
-		JPanel panel_2 = new JPanel();
+	    panel_2 = new JPanel();
 		panel_2.setBounds(10, 40, 250, 400);
 		getContentPane().add(panel_2);
 		panel_2.setOpaque(false);
@@ -192,7 +192,7 @@ public class MainGame extends JFrame {
 		moneyComputer.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
 		moneyComputer.setBounds(1010, 310, 400, 28);
 		add(moneyComputer);
-		comboBox = new JComboBox<Object>();
+		comboBox = new JComboBox<>();
 		comboBox.setFont(new Font(STRINGFONT, Font.PLAIN, 20));
 		mode = new DefaultComboBoxModel<>();
 		mode.addElement("     House was bought");
@@ -338,7 +338,15 @@ public class MainGame extends JFrame {
 		place.work();
 		Color col = place.getColor();
 		namePrice.setBackground(col);
-		if (a == 5 || a == 15 || a == 25 || a == 35) {
+		 if(a==2||a==4||a==7||a==10||a==17||a==22||a==33||a==36||a==38||a==40||a==0||a==20||a==30)
+		 {
+				priceini.setText("");
+				price1.setText("");
+				price2.setText("");
+				price3.setText("");
+				villa.setText("");
+		 }
+		 else if (a == 5 || a == 15 || a == 25 || a == 35) {
 			int pr = place.getPriceini();
 			priceini.setText(INITIALPRICE + pr);
 			int pr1 = place.getPrice1();
@@ -377,7 +385,15 @@ public class MainGame extends JFrame {
 		place.work();
 		Color col1 = place.getColor();
 		namePrice1.setBackground(col1);
-		if (a == 5 || a == 15 || a == 25 || a == 35) {
+		 if(a==2||a==4||a==7||a==10||a==17||a==22||a==33||a==36||a==38||a==40||a==0||a==20||a==30)
+		 {
+				priceini1.setText("");
+				price11.setText("");
+				price21.setText("");
+				price31.setText("");
+				villa1.setText("");
+		 }
+		 else if (a == 5 || a == 15 || a == 25 || a == 35) {
 			int pr1 = place.getPriceini();
 			priceini1.setText(INITIALPRICE + pr1);
 			int pr11 = place.getPrice1();
@@ -417,8 +433,8 @@ public class MainGame extends JFrame {
 	private void move1() {
 		s.moveComputer();
 	}
-	private static void workPlayer() throws InterruptedException {
-		if (isConditionMove()==true) {
+	private void workPlayer() throws InterruptedException {
+		if (isConditionMove()) {
 			if (locationPlayer >= 40)
 			{
 				locationPlayer -= 40;
@@ -461,8 +477,8 @@ public class MainGame extends JFrame {
 			System.out.println(inialmoney1);
 		}
 	}
-	private static void workComputer() throws InterruptedException{
-		if (isConditionMove()==true) {
+	private void workComputer() throws InterruptedException{
+		if (isConditionMove()) {
 			if (locationComputer >= 40)
 			{
 				locationComputer -= 40;
@@ -505,7 +521,40 @@ public class MainGame extends JFrame {
 			System.out.println(inialmoney2);
 		}
 	}
-	public static void run() throws InterruptedException {
+	private void runDice(int range,int time) throws InterruptedException{
+		setConditionMove(true);
+		cameradice.setVisible(true);
+		for (int i = 0; i<range; i++) {
+			ChangeDice.setDiceleft(2);
+			ChangeDice.setDiceright(2);
+			cameradice.change(2);
+			game.repaint();
+			Thread.sleep(time);
+		}
+		ChangeDice.setDiceleft(2);
+		ChangeDice.setDiceright(2);
+		sum = ChangeDice.getDiceleft() + ChangeDice.getDiceright();
+		cameradice.change(2);
+		game.repaint();
+		Thread.sleep(3000);
+		cameradice.setVisible(false);
+	}
+	private void endGame (int money) {
+		String s;
+		if (money <= 0)
+			s="You Lose";
+		else
+			s="You Win";
+		JOptionPane.showMessageDialog(game, s);
+		camera.change(0);
+		cameracomputer.change(0);
+		game.dispose();
+		camera.dispose();
+		cameracomputer.dispose();
+		chance.dispose();
+		communitychest.dispose();
+	}
+	public static void run() throws InterruptedException {//Ngắt luồng đang được thực thi​
 		game = new MainGame();
 		cameracomputer = new CameraComputer();
 		camera = new Camera();
@@ -519,8 +568,8 @@ public class MainGame extends JFrame {
 		cameradice.shown();
 		while (inialmoney1 >= 0 && inialmoney2 >= 0)
 		{
-			moneyPlayer.setText("Your money : $" + inialmoney1);
-			moneyComputer.setText("Com's money : $" + inialmoney2);
+			game.moneyPlayer.setText("Your money : $" + inialmoney1);
+			game.moneyComputer.setText("Com's money : $" + inialmoney2);
 			if (player1 == 1 && prision1 == 0)
 			{
 				sum = 0;
@@ -539,30 +588,15 @@ public class MainGame extends JFrame {
 					if (comboBox.getSelectedIndex() == 0)
 						game.house(0);
 					else {
-						int a = (int)comboBox.getSelectedItem();
+						int a = (int)comboBox.getSelectedItem(); //Có thể bạn sẽ gặp tình huống khi cộng một biến có dạng integer với một biến có dạng float.
+						//Để xử lý tình huống này, Java sử dụng tính năng ép kiểu (type casting) của các phần mềm trước đó C, C++. 
+						//Lúc này một kiểu dữ liệu sẽ chuyển đổi sang kiểu khác
 						game.houseBought(a);
 					}
 				}
 				});
 				if (sav != 0)
-				{
-					setConditionMove(true);
-					cameradice.setVisible(true);
-					for (int i = 0; i<1000; i++) {
-						ChangeDice.setDiceleft(2);
-						ChangeDice.setDiceright(2);
-						cameradice.change(2);
-						game.repaint();
-						Thread.sleep(2);
-					}
-					ChangeDice.setDiceleft(2);
-					ChangeDice.setDiceright(2);
-					sum = ChangeDice.getDiceleft() + ChangeDice.getDiceright();
-					cameradice.change(2);
-					game.repaint();
-					Thread.sleep(3000);
-					cameradice.setVisible(false);
-				}
+					game.runDice(1000,2);
 				while (sum != 0)
 				{
 					locationPlayer++;
@@ -571,7 +605,7 @@ public class MainGame extends JFrame {
 					game.move();
 					camera.change(locationPlayer);
 					game.repaint();
-					Thread.sleep(200);
+					Thread.sleep(200);//Phương thức sleep() của lớp Thread được sử dụng để tạm ngứng một thread cho một khoảng thời gian nhất định.
 					sum--;
 					if (locationPlayer >= 40)
 					{
@@ -581,28 +615,13 @@ public class MainGame extends JFrame {
 				}
 				chance.change(0);
 				communitychest.change(0);
-				workPlayer();
+				game.workPlayer();
 				camera.setVisible(false);
 			}
 			else if (player1 == 2 && prision2 == 0)
 			{
 				sum = 0;
-				setConditionMove(false);
-				cameradice.setVisible(true);
-				for (int i = 0; i<1000; i++) {
-					ChangeDice.setDiceleft(2);
-					ChangeDice.setDiceright(2);
-					cameradice.change(2);
-					game.repaint();
-					Thread.sleep(2);
-				}
-				ChangeDice.setDiceleft(2);
-				ChangeDice.setDiceright(2);
-				sum = ChangeDice.getDiceleft() + ChangeDice.getDiceright();
-				cameradice.change(2);
-				game.repaint();
-				Thread.sleep(3000);
-				cameradice.setVisible(false);
+				game.runDice(1000,2);
 				if (sum != 0)
 					setConditionMove(true);
 				while (sum != 0)
@@ -623,7 +642,7 @@ public class MainGame extends JFrame {
 				}
 				chance.change(0);
 				communitychest.change(0);
-				workComputer();
+				game.workComputer();
 				player1 = 1;
 				cameracomputer.setVisible(false);
 			}
@@ -652,28 +671,7 @@ public class MainGame extends JFrame {
 				Thread.sleep(200);
 			}
 		}
-		if (inialmoney1 <= 0)
-		{
-			JOptionPane.showMessageDialog(game, "You Lose");
-			camera.change(0);
-			cameracomputer.change(0);
-			game.dispose();
-			camera.dispose();
-			cameracomputer.dispose();
-			chance.dispose();
-			communitychest.dispose();
-		}
-		else
-		{
-			JOptionPane.showMessageDialog(game, "You Win");
-			camera.change(0);
-			cameracomputer.change(0);
-			game.dispose();
-			camera.dispose();
-			cameracomputer.dispose();
-			chance.dispose();
-			communitychest.dispose();
-		}
+		game.endGame(inialmoney1);
 	}
 	
 }

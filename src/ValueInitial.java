@@ -1,5 +1,6 @@
 
 public class ValueInitial {
+	
 	private static MainGame game;
 	private static Surface surface;
 	/**
